@@ -1,41 +1,93 @@
--- ============================================
+-- ============================================================
 -- 01_kpi_definitions.sql
--- Purpose: Define baseline KPIs (overall, no segmenting yet).
--- ============================================
+-- Project: Logistics Operations Performance Analysis
+-- Purpose:
+--   - Compute baseline (global) KPIs
+-- ============================================================
+-- ------------------------------------------------------------
+-- NOTE: Scientific notation like 3.1E-06 is normal (0.0000031).
+-- ------------------------------------------------------------
 
-/* KPI 1) Average Delivery Time Deviation */
+
+-- ============================================================
+-- 0) delay_probability range
+-- ============================================================
+
 SELECT
-  AVG(delivery_time_deviation) AS avg_delivery_time_deviation
+  MIN(delay_probability) AS min_delay_probability,
+  MAX(delay_probability) AS max_delay_probability
 FROM `virtual-flux-455815-k4.logistics_operations.vw_driver_bucket_kpis_unified`;
 
-/* KPI 2) Average ETA Variation (Hours) */
+
+-- ============================================================
+-- 1) KPI: Delivery Time Deviation (baseline)
+-- ============================================================
+
 SELECT
-  AVG(eta_variation_hours) AS avg_eta_variation_hours
+  AVG(delivery_time_deviation) AS avg_delivery_time_deviation,
+  APPROX_QUANTILES(delivery_time_deviation, 100)[OFFSET(50)] AS median_delivery_time_deviation,
+  APPROX_QUANTILES(delivery_time_deviation, 100)[OFFSET(95)] AS p95_delivery_time_deviation
 FROM `virtual-flux-455815-k4.logistics_operations.vw_driver_bucket_kpis_unified`;
 
-/* KPI 3) Delay Probability (Mean + p95 tail risk)
-   - p95 shows worst-case behavior (reliability)
-*/
+
+-- ============================================================
+-- 2) KPI: ETA Variation Hours (baseline)
+-- ============================================================
+
+SELECT
+  AVG(eta_variation_hours) AS avg_eta_variation_hours,
+  APPROX_QUANTILES(eta_variation_hours, 100)[OFFSET(50)] AS median_eta_variation_hours,
+  APPROX_QUANTILES(eta_variation_hours, 100)[OFFSET(95)] AS p95_eta_variation_hours
+FROM `virtual-flux-455815-k4.logistics_operations.vw_driver_bucket_kpis_unified`;
+
+
+-- ============================================================
+-- 3) KPI: Delay Probability (baseline + tail risk)
+-- ============================================================
+
 SELECT
   AVG(delay_probability) AS avg_delay_probability,
   APPROX_QUANTILES(delay_probability, 100)[OFFSET(95)] AS p95_delay_probability
 FROM `virtual-flux-455815-k4.logistics_operations.vw_driver_bucket_kpis_unified`;
 
-/* KPI 4) Disruption Likelihood (Average) */
+
+-- ============================================================
+-- 4) KPI: Disruption Likelihood Score (baseline + tail risk)
+-- ============================================================
+
 SELECT
-  AVG(disruption_likelihood_score) AS avg_disruption_likelihood_score
+  AVG(disruption_likelihood_score) AS avg_disruption_likelihood_score,
+  APPROX_QUANTILES(disruption_likelihood_score, 100)[OFFSET(95)] AS p95_disruption_likelihood_score
 FROM `virtual-flux-455815-k4.logistics_operations.vw_driver_bucket_kpis_unified`;
 
-/* KPI 5) Fulfillment Success Rate
-   - Update 'Fulfilled' to match your actual status label(s)
-*/
-SELECT
-  SAFE_DIVIDE(COUNTIF(order_fulfillment_status = 'Fulfilled'), COUNT(*)) AS fulfillment_success_rate
-FROM `virtual-flux-455815-k4.logistics_operations.vw_driver_bucket_kpis_unified`;
 
-/* KPI 6) High-Risk Classification Rate
-   - Update 'High' to match your actual classification label(s)
-*/
+-- ============================================================
+-- 5) KPI: Risk Classification Rates 
+--     High Risk / Moderate Risk / Low Risk
+-- ============================================================
+
 SELECT
-  SAFE_DIVIDE(COUNTIF(risk_classification = 'High'), COUNT(*)) AS high_risk_rate
-FROM `virtual-flux-455815-k4.logistics_operations.vw_driver_bucket_kpis_unified`;
+  SAFE_DIVIDE(COUNTIF(risk_classification = 'High Risk'), COUNT(*)) AS high_risk_rate,
+  SAFE_DIVIDE(COUNTIF(risk_classification = 'Moderate Risk'), COUNT(*)) AS moderate_risk_rate,
+  SAFE_DIVIDE(COUNTIF(risk_classification = 'Low Risk'), COUNT(*)) AS low_risk_rate
+FROM `virtual-flux-455815-k4.logistics_operations.vw_driver_bucket_kpis_unified`
+
+SELECT
+  risk_classification,
+  COUNT(*) AS records,
+  SAFE_DIVIDE(COUNT(*), SUM(COUNT(*)) OVER()) AS rate
+FROM `virtual-flux-455815-k4.logistics_operations.vw_driver_bucket_kpis_unified`
+GROUP BY risk_classification
+ORDER BY records DESC;
+
+
+-- ============================================================
+-- 6) Fulfillment Status: inspect distribution first
+-- ============================================================
+
+SELECT
+  order_fulfillment_status,
+  COUNT(*) AS records
+FROM `virtual-flux-455815-k4.logistics_operations.vw_driver_bucket_kpis_unified`
+GROUP BY order_fulfillment_status
+ORDER BY records DESC;
