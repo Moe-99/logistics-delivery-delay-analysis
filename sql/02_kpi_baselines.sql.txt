@@ -1,0 +1,55 @@
+-- ============================================================
+-- 01_kpi_baselines.sql
+-- Stage 2: Baseline KPI computation (global metrics)
+-- Purpose:
+--   Establish baseline performance + risk metrics before segmentation.
+-- ============================================================
+/* KPI A: Delivery Time Deviation (performance + reliability) */
+SELECT
+  AVG(delivery_time_deviation) AS avg_delivery_time_deviation,
+  APPROX_QUANTILES(delivery_time_deviation, 100)[OFFSET(50)] AS median_delivery_time_deviation,
+  APPROX_QUANTILES(delivery_time_deviation, 100)[OFFSET(95)] AS p95_delivery_time_deviation
+FROM `virtual-flux-455815-k4.logistics_operations.vw_driver_bucket_kpis_unified`;
+
+/* KPI B: ETA Variation Hours (planning accuracy + reliability) */
+SELECT
+  AVG(eta_variation_hours) AS avg_eta_variation_hours,
+  APPROX_QUANTILES(eta_variation_hours, 100)[OFFSET(50)] AS median_eta_variation_hours,
+  APPROX_QUANTILES(eta_variation_hours, 100)[OFFSET(95)] AS p95_eta_variation_hours
+FROM `virtual-flux-455815-k4.logistics_operations.vw_driver_bucket_kpis_unified`;
+
+/* KPI C: Delay Probability (baseline risk + tail risk) */
+SELECT
+  AVG(delay_probability) AS avg_delay_probability,
+  APPROX_QUANTILES(delay_probability, 100)[OFFSET(95)] AS p95_delay_probability
+FROM `virtual-flux-455815-k4.logistics_operations.vw_driver_bucket_kpis_unified`;
+
+/* KPI D: Disruption Likelihood Score (baseline disruption risk + tail risk) */
+SELECT
+  AVG(disruption_likelihood_score) AS avg_disruption_likelihood_score,
+  APPROX_QUANTILES(disruption_likelihood_score, 100)[OFFSET(95)] AS p95_disruption_likelihood_score
+FROM `virtual-flux-455815-k4.logistics_operations.vw_driver_bucket_kpis_unified`;
+
+/* KPI E: Risk Classification Rates */
+SELECT
+  SAFE_DIVIDE(COUNTIF(risk_classification = 'High Risk'), COUNT(*)) AS high_risk_rate,
+  SAFE_DIVIDE(COUNTIF(risk_classification = 'Moderate Risk'), COUNT(*)) AS moderate_risk_rate,
+  SAFE_DIVIDE(COUNTIF(risk_classification = 'Low Risk'), COUNT(*)) AS low_risk_rate
+FROM `virtual-flux-455815-k4.logistics_operations.vw_driver_bucket_kpis_unified`;
+
+/* KPI E (optional): Risk Classification Counts + Rates (dashboard-friendly) */
+SELECT
+  risk_classification,
+  COUNT(*) AS records,
+  SAFE_DIVIDE(COUNT(*), SUM(COUNT(*)) OVER()) AS rate
+FROM `virtual-flux-455815-k4.logistics_operations.vw_driver_bucket_kpis_unified`
+GROUP BY risk_classification
+ORDER BY records DESC;
+
+/* Inspect: order_fulfillment_status appears numeric (not categorical) */
+SELECT
+  order_fulfillment_status,
+  COUNT(*) AS records
+FROM `virtual-flux-455815-k4.logistics_operations.vw_driver_bucket_kpis_unified`
+GROUP BY order_fulfillment_status
+ORDER BY records DESC;
