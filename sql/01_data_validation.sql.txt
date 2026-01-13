@@ -1,24 +1,17 @@
 -- ============================================
 -- 00_data_validation.sql
 -- Purpose: Validate raw dataset quality before KPI computation.
--- Notes:
---   - No transformations here
---   - We are checking completeness + sanity
 -- ============================================
-
--- TODO: Replace with your table reference
--- `your_project.logistics_operations.delivery_events_raw`
-
 /* 1) Row count */
 SELECT
   COUNT(*) AS row_count
-FROM `your_project.logistics_operations.delivery_events_raw`;
+FROM `virtual-flux-455815-k4.logistics_operations.vw_driver_bucket_kpis_unified`;
 
 /* 2) Timestamp coverage */
 SELECT
   MIN(timestamp) AS min_timestamp,
   MAX(timestamp) AS max_timestamp
-FROM `your_project.logistics_operations.delivery_events_raw`;
+FROM `virtual-flux-455815-k4.logistics_operations.vw_driver_bucket_kpis_unified`;
 
 /* 3) Null checks for key outcome/KPI columns */
 SELECT
@@ -29,7 +22,7 @@ SELECT
   COUNTIF(disruption_likelihood_score IS NULL) AS null_disruption_likelihood_score,
   COUNTIF(order_fulfillment_status IS NULL) AS null_order_fulfillment_status,
   COUNTIF(risk_classification IS NULL) AS null_risk_classification
-FROM `your_project.logistics_operations.delivery_events_raw`;
+FROM `virtual-flux-455815-k4.logistics_operations.vw_driver_bucket_kpis_unified`;
 
 /* 4) Range checks for key numeric columns */
 SELECT
@@ -41,24 +34,24 @@ SELECT
   MAX(delay_probability) AS max_delay_probability,
   MIN(disruption_likelihood_score) AS min_disruption_likelihood_score,
   MAX(disruption_likelihood_score) AS max_disruption_likelihood_score
-FROM `your_project.logistics_operations.delivery_events_raw`;
+FROM `virtual-flux-455815-k4.logistics_operations.vw_driver_bucket_kpis_unified`;
 
 /* 5) Distribution check (quick view) */
 SELECT
   APPROX_QUANTILES(delivery_time_deviation, 5) AS delivery_time_deviation_quantiles
-FROM `your_project.logistics_operations.delivery_events_raw`;
+FROM `virtual-flux-455815-k4.logistics_operations.vw_driver_bucket_kpis_unified`;
 
 /* 6) Categorical value checks */
 SELECT
   risk_classification,
   COUNT(*) AS cnt
-FROM `your_project.logistics_operations.delivery_events_raw`
+FROM `virtual-flux-455815-k4.logistics_operations.vw_driver_bucket_kpis_unified`
 GROUP BY risk_classification
 ORDER BY cnt DESC;
 
 SELECT
   order_fulfillment_status,
   COUNT(*) AS cnt
-FROM `your_project.logistics_operations.delivery_events_raw`
+FROM `virtual-flux-455815-k4.logistics_operations.vw_driver_bucket_kpis_unified`
 GROUP BY order_fulfillment_status
 ORDER BY cnt DESC;
