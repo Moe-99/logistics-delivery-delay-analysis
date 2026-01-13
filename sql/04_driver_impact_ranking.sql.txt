@@ -1,0 +1,40 @@
+CREATE OR REPLACE VIEW
+  `virtual-flux-455815-k4.logistics_operations.vw_driver_impact_ranking` AS
+
+WITH base AS (
+  SELECT
+    driver,
+    bucket,
+    p95_delivery_time_deviation,
+    median_delivery_time_deviation
+  FROM
+    `virtual-flux-455815-k4.logistics_operations.vw_driver_bucket_kpis_unified`
+),
+
+pivoted AS (
+  SELECT
+    driver,
+
+    -- Worst-case delay (P95)
+    MAX(CASE WHEN bucket = 'Low'  THEN p95_delivery_time_deviation END)  AS p95_low,
+    MAX(CASE WHEN bucket = 'High' THEN p95_delivery_time_deviation END) AS p95_high,
+
+    -- Typical delay (Median)
+    MAX(CASE WHEN bucket = 'Low'  THEN median_delivery_time_deviation END)  AS median_low,
+    MAX(CASE WHEN bucket = 'High' THEN median_delivery_time_deviation END) AS median_high
+
+  FROM base
+  GROUP BY driver
+)
+
+SELECT
+  driver,
+
+  -- Change in worst-case delay from Low → High risk
+  (p95_high - p95_low) AS worst_case_delay_increase_hours,
+
+  -- Change in typical delay from Low → High risk
+  (median_high - median_low) AS typical_delay_increase_hours
+
+FROM pivoted
+ORDER BY worst_case_delay_increase_hours DESC;
