@@ -1,0 +1,2324 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20253.25.1210.1815                               -->
+<workbook original-version='18.1' source-build='2025.3.1 (20253.25.1210.1815)' source-platform='win' version='18.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <AccessibleZoneTabOrder />
+    <AnimationOnByDefault />
+    <AutoCreateAndUpdateDSDPhoneLayouts />
+    <MarkAnimation />
+    <ObjectModelEncapsulateLegacy />
+    <ObjectModelTableType />
+    <SchemaViewerObjectModel />
+    <SetMembershipControl />
+    <SheetIdentifierTracking />
+    <SortTagCleanup />
+    <WindowsPersistSimpleIdentifiers />
+  </document-format-change-manifest>
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <datasources>
+    <datasource hasconnection='false' inline='true' name='Parameters' version='18.1'>
+      <aliases enabled='yes' />
+      <column caption='Parameter 1' datatype='real' name='[Parameter 1]' param-domain-type='any' role='measure' type='quantitative' value='0.0'>
+        <calculation class='tableau' formula='0.0' />
+      </column>
+    </datasource>
+    <datasource caption='vw_driver_bucket_kpis_unified (logistics_operations)' inline='true' name='federated.003aplx16c3zg2126m1zo1md3gvy' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='BigQuery' name='bigquery.0nr44rs12pedh31cdvqlu193m468'>
+            <connection CATALOG='virtual-flux-455815-k4' EXECCATALOG='my-project-trees-455912' authentication='oauth' class='bigquery' connection-dialect='google-sql' project='My First Project' schema='logistics_operations' server-oauth='' username='moe.alsharafi99@gmail.com' />
+          </named-connection>
+        </named-connections>
+        <relation type='collection'>
+          <relation connection='bigquery.0nr44rs12pedh31cdvqlu193m468' name='vw_driver_bucket_kpis_unified' table='[virtual-flux-455815-k4.logistics_operations].[vw_driver_bucket_kpis_unified]' type='table' />
+          <relation connection='bigquery.0nr44rs12pedh31cdvqlu193m468' name='vw_driver_impact_ranking' table='[virtual-flux-455815-k4.logistics_operations].[vw_driver_impact_ranking]' type='table' />
+        </relation>
+        <cols>
+          <map key='[avg_delay_probability]' value='[vw_driver_bucket_kpis_unified].[avg_delay_probability]' />
+          <map key='[avg_delivery_time_deviation]' value='[vw_driver_bucket_kpis_unified].[avg_delivery_time_deviation]' />
+          <map key='[avg_disruption_likelihood_score]' value='[vw_driver_bucket_kpis_unified].[avg_disruption_likelihood_score]' />
+          <map key='[bucket]' value='[vw_driver_bucket_kpis_unified].[bucket]' />
+          <map key='[driver (vw_driver_impact_ranking)]' value='[vw_driver_impact_ranking].[driver]' />
+          <map key='[driver]' value='[vw_driver_bucket_kpis_unified].[driver]' />
+          <map key='[median_delivery_time_deviation]' value='[vw_driver_bucket_kpis_unified].[median_delivery_time_deviation]' />
+          <map key='[n]' value='[vw_driver_bucket_kpis_unified].[n]' />
+          <map key='[p95_delay_probability]' value='[vw_driver_bucket_kpis_unified].[p95_delay_probability]' />
+          <map key='[p95_delivery_time_deviation]' value='[vw_driver_bucket_kpis_unified].[p95_delivery_time_deviation]' />
+          <map key='[p95_disruption_likelihood_score]' value='[vw_driver_bucket_kpis_unified].[p95_disruption_likelihood_score]' />
+          <map key='[typical_delay_increase_hours]' value='[vw_driver_impact_ranking].[typical_delay_increase_hours]' />
+          <map key='[worst_case_delay_increase_hours]' value='[vw_driver_impact_ranking].[worst_case_delay_increase_hours]' />
+        </cols>
+        <metadata-records>
+          <metadata-record class='column'>
+            <remote-name>driver</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[driver]</local-name>
+            <parent-name>[vw_driver_bucket_kpis_unified]</parent-name>
+            <remote-alias>driver</remote-alias>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[vw_driver_bucket_kpis_unified_7D8AA5D0D94D4A1181AD7DB3557D05EB]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>bucket</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[bucket]</local-name>
+            <parent-name>[vw_driver_bucket_kpis_unified]</parent-name>
+            <remote-alias>bucket</remote-alias>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[vw_driver_bucket_kpis_unified_7D8AA5D0D94D4A1181AD7DB3557D05EB]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>n</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[n]</local-name>
+            <parent-name>[vw_driver_bucket_kpis_unified]</parent-name>
+            <remote-alias>n</remote-alias>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[vw_driver_bucket_kpis_unified_7D8AA5D0D94D4A1181AD7DB3557D05EB]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>avg_delivery_time_deviation</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[avg_delivery_time_deviation]</local-name>
+            <parent-name>[vw_driver_bucket_kpis_unified]</parent-name>
+            <remote-alias>avg_delivery_time_deviation</remote-alias>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[vw_driver_bucket_kpis_unified_7D8AA5D0D94D4A1181AD7DB3557D05EB]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>median_delivery_time_deviation</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[median_delivery_time_deviation]</local-name>
+            <parent-name>[vw_driver_bucket_kpis_unified]</parent-name>
+            <remote-alias>median_delivery_time_deviation</remote-alias>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[vw_driver_bucket_kpis_unified_7D8AA5D0D94D4A1181AD7DB3557D05EB]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>p95_delivery_time_deviation</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[p95_delivery_time_deviation]</local-name>
+            <parent-name>[vw_driver_bucket_kpis_unified]</parent-name>
+            <remote-alias>p95_delivery_time_deviation</remote-alias>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[vw_driver_bucket_kpis_unified_7D8AA5D0D94D4A1181AD7DB3557D05EB]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>avg_delay_probability</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[avg_delay_probability]</local-name>
+            <parent-name>[vw_driver_bucket_kpis_unified]</parent-name>
+            <remote-alias>avg_delay_probability</remote-alias>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[vw_driver_bucket_kpis_unified_7D8AA5D0D94D4A1181AD7DB3557D05EB]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>p95_delay_probability</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[p95_delay_probability]</local-name>
+            <parent-name>[vw_driver_bucket_kpis_unified]</parent-name>
+            <remote-alias>p95_delay_probability</remote-alias>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[vw_driver_bucket_kpis_unified_7D8AA5D0D94D4A1181AD7DB3557D05EB]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>avg_disruption_likelihood_score</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[avg_disruption_likelihood_score]</local-name>
+            <parent-name>[vw_driver_bucket_kpis_unified]</parent-name>
+            <remote-alias>avg_disruption_likelihood_score</remote-alias>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[vw_driver_bucket_kpis_unified_7D8AA5D0D94D4A1181AD7DB3557D05EB]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>p95_disruption_likelihood_score</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[p95_disruption_likelihood_score]</local-name>
+            <parent-name>[vw_driver_bucket_kpis_unified]</parent-name>
+            <remote-alias>p95_disruption_likelihood_score</remote-alias>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[vw_driver_bucket_kpis_unified_7D8AA5D0D94D4A1181AD7DB3557D05EB]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>driver</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[driver (vw_driver_impact_ranking)]</local-name>
+            <parent-name>[vw_driver_impact_ranking]</parent-name>
+            <remote-alias>driver</remote-alias>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[vw_driver_impact_ranking_FAB4571FE2894A02A24721C2D3C0F374]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>worst_case_delay_increase_hours</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[worst_case_delay_increase_hours]</local-name>
+            <parent-name>[vw_driver_impact_ranking]</parent-name>
+            <remote-alias>worst_case_delay_increase_hours</remote-alias>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[vw_driver_impact_ranking_FAB4571FE2894A02A24721C2D3C0F374]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>typical_delay_increase_hours</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[typical_delay_increase_hours]</local-name>
+            <parent-name>[vw_driver_impact_ranking]</parent-name>
+            <remote-alias>typical_delay_increase_hours</remote-alias>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[vw_driver_impact_ranking_FAB4571FE2894A02A24721C2D3C0F374]</object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column datatype='string' name='[:Measure Names]' role='dimension' type='nominal'>
+        <aliases>
+          <alias key='&quot;[federated.003aplx16c3zg2126m1zo1md3gvy].[avg:median_delivery_time_deviation:qk]&quot;' value='Typical Delay (Median)' />
+          <alias key='&quot;[federated.003aplx16c3zg2126m1zo1md3gvy].[avg:p95_delivery_time_deviation:qk]&quot;' value='Worst-Case Delay (P95)' />
+        </aliases>
+      </column>
+      <column caption='Risk Level Definition' datatype='string' name='[Calculation_1523400449802240]' role='dimension' type='nominal'>
+        <calculation class='tableau' formula='CASE [bucket]&#13;&#10;WHEN &apos;Low&apos; THEN &apos;Lowest 33% of observed values&apos;&#13;&#10;WHEN &apos;Medium&apos; THEN &apos;Middle 33% of observed values&apos;&#13;&#10;WHEN &apos;High&apos; THEN &apos;Highest 33% of observed values&apos;&#13;&#10;END' />
+      </column>
+      <column caption='Worst Case Impact Direction' datatype='string' name='[Calculation_1523400757608450]' role='dimension' type='nominal'>
+        <calculation class='tableau' formula='IF [worst_case_delay_increase_hours] &gt;= 0 THEN &quot;Increase&quot;&#13;&#10;ELSE &quot;Decrease&quot;&#13;&#10;END' />
+      </column>
+      <column caption='Typical Impact Direction' datatype='string' name='[Calculation_1523400758198275]' role='dimension' type='nominal'>
+        <calculation class='tableau' formula='IF [typical_delay_increase_hours] &gt;= 0 THEN &quot;Increase&quot;&#13;&#10;ELSE &quot;Decrease&quot;&#13;&#10;END' />
+      </column>
+      <column caption='vw_driver_bucket_kpis_unified' datatype='table' name='[__tableau_internal_object_id__].[vw_driver_bucket_kpis_unified_7D8AA5D0D94D4A1181AD7DB3557D05EB]' role='measure' type='quantitative' />
+      <column caption='vw_driver_impact_ranking' datatype='table' name='[__tableau_internal_object_id__].[vw_driver_impact_ranking_FAB4571FE2894A02A24721C2D3C0F374]' role='measure' type='quantitative' />
+      <column caption='Avg Delay Probability' datatype='real' name='[avg_delay_probability]' role='measure' type='quantitative' />
+      <column caption='Avg Delivery Time Deviation' datatype='real' name='[avg_delivery_time_deviation]' role='measure' type='quantitative' />
+      <column caption='Avg Disruption Likelihood Score' datatype='real' name='[avg_disruption_likelihood_score]' role='measure' type='quantitative' />
+      <column caption='Relative Risk Level' datatype='string' name='[bucket]' role='dimension' type='nominal' />
+      <column caption='Operational Driver' datatype='string' name='[driver (vw_driver_impact_ranking)]' role='dimension' type='nominal' />
+      <column caption='Driver' datatype='string' name='[driver]' role='dimension' type='nominal' />
+      <column caption='Median Delivery Time Deviation' datatype='real' name='[median_delivery_time_deviation]' role='measure' type='quantitative' />
+      <column caption='N' datatype='integer' name='[n]' role='measure' type='quantitative' />
+      <column caption='P95 Delay Probability' datatype='real' name='[p95_delay_probability]' role='measure' type='quantitative' />
+      <column caption='P95 Delivery Time Deviation' datatype='real' name='[p95_delivery_time_deviation]' role='measure' type='quantitative' />
+      <column caption='P95 Disruption Likelihood Score' datatype='real' name='[p95_disruption_likelihood_score]' role='measure' type='quantitative' />
+      <column caption='Typical Delay Increase Hours' datatype='real' name='[typical_delay_increase_hours]' role='measure' type='quantitative' />
+      <column caption='Worst Case Delay Increase Hours' datatype='real' name='[worst_case_delay_increase_hours]' role='measure' type='quantitative' />
+      <column-instance column='[__tableau_internal_object_id__].[vw_driver_bucket_kpis_unified_7D8AA5D0D94D4A1181AD7DB3557D05EB]' derivation='Count' name='[__tableau_internal_object_id__].[cnt:vw_driver_bucket_kpis_unified_7D8AA5D0D94D4A1181AD7DB3557D05EB:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[median_delivery_time_deviation]' derivation='Avg' name='[avg:median_delivery_time_deviation:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[p95_delivery_time_deviation]' derivation='Avg' name='[avg:p95_delivery_time_deviation:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Calculation_1523400757608450]' derivation='None' name='[none:Calculation_1523400757608450:nk]' pivot='key' type='nominal' />
+      <column-instance column='[Calculation_1523400758198275]' derivation='None' name='[none:Calculation_1523400758198275:nk]' pivot='key' type='nominal' />
+      <column-instance column='[avg_delay_probability]' derivation='Sum' name='[sum:avg_delay_probability:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[avg_delivery_time_deviation]' derivation='Sum' name='[sum:avg_delivery_time_deviation:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[avg_disruption_likelihood_score]' derivation='Sum' name='[sum:avg_disruption_likelihood_score:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[median_delivery_time_deviation]' derivation='Sum' name='[sum:median_delivery_time_deviation:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[n]' derivation='Sum' name='[sum:n:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[p95_delay_probability]' derivation='Sum' name='[sum:p95_delay_probability:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[p95_delivery_time_deviation]' derivation='Sum' name='[sum:p95_delivery_time_deviation:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[p95_disruption_likelihood_score]' derivation='Sum' name='[sum:p95_disruption_likelihood_score:qk]' pivot='key' type='quantitative' />
+      <layout dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+      <style>
+        <style-rule element='mark'>
+          <encoding attr='color' field='[:Measure Names]' type='palette'>
+            <map to='#4e79a7'>
+              <bucket>&quot;[federated.003aplx16c3zg2126m1zo1md3gvy]&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;[federated.003aplx16c3zg2126m1zo1md3gvy].[sum:avg_delay_probability:qk]&quot;</bucket>
+            </map>
+            <map to='#5485b2'>
+              <bucket>&quot;[federated.003aplx16c3zg2126m1zo1md3gvy].[avg:median_delivery_time_deviation:qk]&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;[federated.003aplx16c3zg2126m1zo1md3gvy].[sum:median_delivery_time_deviation:qk]&quot;</bucket>
+            </map>
+            <map to='#76b7b2'>
+              <bucket>&quot;[federated.003aplx16c3zg2126m1zo1md3gvy].[__tableau_internal_object_id__].[cnt:vw_driver_bucket_kpis_unified_7D8AA5D0D94D4A1181AD7DB3557D05EB:qk]&quot;</bucket>
+            </map>
+            <map to='#9c755f'>
+              <bucket>&quot;[federated.003aplx16c3zg2126m1zo1md3gvy].[sum:p95_disruption_likelihood_score:qk]&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;[federated.003aplx16c3zg2126m1zo1md3gvy].[sum:p95_delay_probability:qk]&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;[federated.003aplx16c3zg2126m1zo1md3gvy].[sum:avg_disruption_likelihood_score:qk]&quot;</bucket>
+            </map>
+            <map to='#edc948'>
+              <bucket>&quot;[federated.003aplx16c3zg2126m1zo1md3gvy].[sum:n:qk]&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;[federated.003aplx16c3zg2126m1zo1md3gvy].[avg:p95_delivery_time_deviation:qk]&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;[federated.003aplx16c3zg2126m1zo1md3gvy].[sum:avg_delivery_time_deviation:qk]&quot;</bucket>
+            </map>
+            <map to='#ff9da7'>
+              <bucket>&quot;[federated.003aplx16c3zg2126m1zo1md3gvy].[sum:p95_delivery_time_deviation:qk]&quot;</bucket>
+            </map>
+          </encoding>
+          <encoding attr='color' field='[none:Calculation_1523400521445377:nk]' type='palette'>
+            <map to='#4e79a7'>
+              <bucket>&quot;Increase&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;Decrease&quot;</bucket>
+            </map>
+          </encoding>
+          <encoding attr='color' field='[none:Calculation_1523400757608450:nk]' type='palette'>
+            <map to='#4e79a7'>
+              <bucket>&quot;Increase&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;Decrease&quot;</bucket>
+            </map>
+          </encoding>
+          <encoding attr='color' field='[none:Calculation_1523400758198275:nk]' type='palette'>
+            <map to='#4e79a7'>
+              <bucket>&quot;Increase&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;Decrease&quot;</bucket>
+            </map>
+          </encoding>
+        </style-rule>
+      </style>
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;Netherlands&quot;' />
+      </semantic-values>
+      <object-graph>
+        <objects>
+          <object caption='vw_driver_bucket_kpis_unified' id='vw_driver_bucket_kpis_unified_7D8AA5D0D94D4A1181AD7DB3557D05EB'>
+            <properties context=''>
+              <relation connection='bigquery.0nr44rs12pedh31cdvqlu193m468' name='vw_driver_bucket_kpis_unified' table='[virtual-flux-455815-k4.logistics_operations].[vw_driver_bucket_kpis_unified]' type='table' />
+            </properties>
+          </object>
+          <object caption='vw_driver_impact_ranking' id='vw_driver_impact_ranking_FAB4571FE2894A02A24721C2D3C0F374'>
+            <properties context=''>
+              <relation connection='bigquery.0nr44rs12pedh31cdvqlu193m468' name='vw_driver_impact_ranking' table='[virtual-flux-455815-k4.logistics_operations].[vw_driver_impact_ranking]' type='table' />
+            </properties>
+          </object>
+        </objects>
+        <relationships>
+          <relationship>
+            <expression op='='>
+              <expression op='[driver]' />
+              <expression op='[driver (vw_driver_impact_ranking)]' />
+            </expression>
+            <first-end-point object-id='vw_driver_bucket_kpis_unified_7D8AA5D0D94D4A1181AD7DB3557D05EB' />
+            <second-end-point object-id='vw_driver_impact_ranking_FAB4571FE2894A02A24721C2D3C0F374' />
+          </relationship>
+        </relationships>
+      </object-graph>
+    </datasource>
+  </datasources>
+  <worksheets>
+    <worksheet name='Delivery Delay Impact by Port Congestion Level'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run fontalignment='1'>Delivery Delay Impact by Port Congestion Level
+</run>
+            <run fontalignment='1' fontcolor='#000000' fontsize='10'>Relative risk levels based on distribution of observed conditions</run>
+            <run>Æ&#10;</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='vw_driver_bucket_kpis_unified (logistics_operations)' name='federated.003aplx16c3zg2126m1zo1md3gvy' />
+          </datasources>
+          <datasource-dependencies datasource='federated.003aplx16c3zg2126m1zo1md3gvy'>
+            <column caption='Risk Level Definition' datatype='string' name='[Calculation_1523400449802240]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='CASE [bucket]&#13;&#10;WHEN &apos;Low&apos; THEN &apos;Lowest 33% of observed values&apos;&#13;&#10;WHEN &apos;Medium&apos; THEN &apos;Middle 33% of observed values&apos;&#13;&#10;WHEN &apos;High&apos; THEN &apos;Highest 33% of observed values&apos;&#13;&#10;END' />
+            </column>
+            <column-instance column='[median_delivery_time_deviation]' derivation='Avg' name='[avg:median_delivery_time_deviation:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[p95_delivery_time_deviation]' derivation='Avg' name='[avg:p95_delivery_time_deviation:qk]' pivot='key' type='quantitative' />
+            <column caption='Relative Risk Level' datatype='string' name='[bucket]' role='dimension' type='nominal' />
+            <column caption='Driver' datatype='string' name='[driver]' role='dimension' type='nominal' />
+            <column caption='Median Delivery Time Deviation' datatype='real' name='[median_delivery_time_deviation]' role='measure' type='quantitative' />
+            <column-instance column='[Calculation_1523400449802240]' derivation='None' name='[none:Calculation_1523400449802240:nk]' pivot='key' type='nominal' />
+            <column-instance column='[bucket]' derivation='None' name='[none:bucket:nk]' pivot='key' type='nominal' />
+            <column-instance column='[driver]' derivation='None' name='[none:driver:nk]' pivot='key' type='nominal' />
+            <column caption='P95 Delivery Time Deviation' datatype='real' name='[p95_delivery_time_deviation]' role='measure' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.003aplx16c3zg2126m1zo1md3gvy].[:Measure Names]'>
+            <groupfilter function='union' user:op='manual'>
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.003aplx16c3zg2126m1zo1md3gvy].[avg:median_delivery_time_deviation:qk]&quot;' />
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.003aplx16c3zg2126m1zo1md3gvy].[avg:p95_delivery_time_deviation:qk]&quot;' />
+            </groupfilter>
+          </filter>
+          <manual-sort column='[federated.003aplx16c3zg2126m1zo1md3gvy].[:Measure Names]' direction='ASC'>
+            <dictionary>
+              <bucket>&quot;[federated.003aplx16c3zg2126m1zo1md3gvy].[avg:median_delivery_time_deviation:qk]&quot;</bucket>
+              <bucket>&quot;[federated.003aplx16c3zg2126m1zo1md3gvy].[avg:p95_delivery_time_deviation:qk]&quot;</bucket>
+            </dictionary>
+          </manual-sort>
+          <manual-sort column='[federated.003aplx16c3zg2126m1zo1md3gvy].[none:bucket:nk]' direction='ASC'>
+            <dictionary>
+              <bucket>&quot;Low&quot;</bucket>
+              <bucket>&quot;Medium&quot;</bucket>
+              <bucket>&quot;High&quot;</bucket>
+            </dictionary>
+          </manual-sort>
+          <filter class='categorical' column='[federated.003aplx16c3zg2126m1zo1md3gvy].[none:driver:nk]'>
+            <groupfilter function='member' level='[none:driver:nk]' member='&quot;Port Congestion&quot;' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.003aplx16c3zg2126m1zo1md3gvy].[:Measure Names]</column>
+            <column>[federated.003aplx16c3zg2126m1zo1md3gvy].[none:driver:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <format attr='title' class='0' field='[federated.003aplx16c3zg2126m1zo1md3gvy].[Multiple Values]' scope='rows' value='Delivery Time Deviation (Hours)' />
+          </style-rule>
+          <style-rule element='label'>
+            <format attr='display' field='[federated.003aplx16c3zg2126m1zo1md3gvy].[:Measure Names]' value='false' />
+          </style-rule>
+          <style-rule element='gridline'>
+            <format attr='stroke-size' value='0' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane id='5' selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='off' />
+            </view>
+            <mark class='Bar' />
+            <mark-sizing mark-sizing-setting='marks-scaling-off' />
+            <encodings>
+              <color column='[federated.003aplx16c3zg2126m1zo1md3gvy].[:Measure Names]' />
+              <lod column='[federated.003aplx16c3zg2126m1zo1md3gvy].[none:Calculation_1523400449802240:nk]' />
+            </encodings>
+            <customized-tooltip>
+              <formatted-text>
+                <run fontcolor='#757575'>Relative Risk Level:&#9;</run>
+                <run bold='true'><![CDATA[<[federated.003aplx16c3zg2126m1zo1md3gvy].[none:bucket:nk]>]]></run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#757575'>Definition:</run>
+                <run bold='true'><![CDATA[<[federated.003aplx16c3zg2126m1zo1md3gvy].[none:Calculation_1523400449802240:nk]>]]></run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#757575'><![CDATA[Metric:<[federated.003aplx16c3zg2126m1zo1md3gvy].[:Measure Names]>]]></run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#757575'><![CDATA[Value: <[federated.003aplx16c3zg2126m1zo1md3gvy].[Multiple Values]>]]></run>
+              </formatted-text>
+            </customized-tooltip>
+            <style>
+              <style-rule element='mark'>
+                <format attr='size' value='1.0434806346893311' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.003aplx16c3zg2126m1zo1md3gvy].[Multiple Values]</rows>
+        <cols>([federated.003aplx16c3zg2126m1zo1md3gvy].[none:bucket:nk] / [federated.003aplx16c3zg2126m1zo1md3gvy].[:Measure Names])</cols>
+      </table>
+      <simple-id uuid='{98B48070-6FE5-41E7-837E-8A5D7EA64DE8}' />
+    </worksheet>
+    <worksheet name='Delivery Delay Impact by Route Risk'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run fontalignment='1' fontsize='16'>Delivery Delay Impact by Route Risk</run>
+            <run fontalignment='1'>Æ&#10;</run>
+            <run fontalignment='1' fontsize='10'>Comparison of typical vs worst-case delivery delays</run>
+            <run fontalignment='1'>Æ&#10;</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='vw_driver_bucket_kpis_unified (logistics_operations)' name='federated.003aplx16c3zg2126m1zo1md3gvy' />
+          </datasources>
+          <datasource-dependencies datasource='federated.003aplx16c3zg2126m1zo1md3gvy'>
+            <column caption='Risk Level Definition' datatype='string' name='[Calculation_1523400449802240]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='CASE [bucket]&#13;&#10;WHEN &apos;Low&apos; THEN &apos;Lowest 33% of observed values&apos;&#13;&#10;WHEN &apos;Medium&apos; THEN &apos;Middle 33% of observed values&apos;&#13;&#10;WHEN &apos;High&apos; THEN &apos;Highest 33% of observed values&apos;&#13;&#10;END' />
+            </column>
+            <column-instance column='[median_delivery_time_deviation]' derivation='Avg' name='[avg:median_delivery_time_deviation:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[p95_delivery_time_deviation]' derivation='Avg' name='[avg:p95_delivery_time_deviation:qk]' pivot='key' type='quantitative' />
+            <column caption='Relative Risk Level' datatype='string' name='[bucket]' role='dimension' type='nominal' />
+            <column caption='Driver' datatype='string' name='[driver]' role='dimension' type='nominal' />
+            <column caption='Median Delivery Time Deviation' datatype='real' name='[median_delivery_time_deviation]' role='measure' type='quantitative' />
+            <column-instance column='[Calculation_1523400449802240]' derivation='None' name='[none:Calculation_1523400449802240:nk]' pivot='key' type='nominal' />
+            <column-instance column='[bucket]' derivation='None' name='[none:bucket:nk]' pivot='key' type='nominal' />
+            <column-instance column='[driver]' derivation='None' name='[none:driver:nk]' pivot='key' type='nominal' />
+            <column caption='P95 Delivery Time Deviation' datatype='real' name='[p95_delivery_time_deviation]' role='measure' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.003aplx16c3zg2126m1zo1md3gvy].[:Measure Names]'>
+            <groupfilter function='union' user:op='manual'>
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.003aplx16c3zg2126m1zo1md3gvy].[avg:median_delivery_time_deviation:qk]&quot;' />
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.003aplx16c3zg2126m1zo1md3gvy].[avg:p95_delivery_time_deviation:qk]&quot;' />
+            </groupfilter>
+          </filter>
+          <manual-sort column='[federated.003aplx16c3zg2126m1zo1md3gvy].[:Measure Names]' direction='ASC'>
+            <dictionary>
+              <bucket>&quot;[federated.003aplx16c3zg2126m1zo1md3gvy].[avg:median_delivery_time_deviation:qk]&quot;</bucket>
+              <bucket>&quot;[federated.003aplx16c3zg2126m1zo1md3gvy].[avg:p95_delivery_time_deviation:qk]&quot;</bucket>
+            </dictionary>
+          </manual-sort>
+          <manual-sort column='[federated.003aplx16c3zg2126m1zo1md3gvy].[none:bucket:nk]' direction='ASC'>
+            <dictionary>
+              <bucket>&quot;Low&quot;</bucket>
+              <bucket>&quot;Medium&quot;</bucket>
+              <bucket>&quot;High&quot;</bucket>
+            </dictionary>
+          </manual-sort>
+          <filter class='categorical' column='[federated.003aplx16c3zg2126m1zo1md3gvy].[none:driver:nk]'>
+            <groupfilter function='member' level='[none:driver:nk]' member='&quot;Route Risk&quot;' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.003aplx16c3zg2126m1zo1md3gvy].[:Measure Names]</column>
+            <column>[federated.003aplx16c3zg2126m1zo1md3gvy].[none:driver:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <format attr='title' class='0' field='[federated.003aplx16c3zg2126m1zo1md3gvy].[Multiple Values]' scope='rows' value='Delivery Time Deviation (Hours)' />
+          </style-rule>
+          <style-rule element='label'>
+            <format attr='display' field='[federated.003aplx16c3zg2126m1zo1md3gvy].[:Measure Names]' value='false' />
+          </style-rule>
+          <style-rule element='gridline'>
+            <format attr='stroke-size' value='0' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane id='5' selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='off' />
+            </view>
+            <mark class='Bar' />
+            <mark-sizing mark-sizing-setting='marks-scaling-off' />
+            <encodings>
+              <color column='[federated.003aplx16c3zg2126m1zo1md3gvy].[:Measure Names]' />
+              <lod column='[federated.003aplx16c3zg2126m1zo1md3gvy].[none:Calculation_1523400449802240:nk]' />
+            </encodings>
+            <customized-tooltip>
+              <formatted-text>
+                <run fontcolor='#757575'>Relative Risk Level:&#9;</run>
+                <run bold='true'><![CDATA[<[federated.003aplx16c3zg2126m1zo1md3gvy].[none:bucket:nk]>]]></run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#757575'>Definition:</run>
+                <run bold='true'><![CDATA[<[federated.003aplx16c3zg2126m1zo1md3gvy].[none:Calculation_1523400449802240:nk]>]]></run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#757575'><![CDATA[Metric:<[federated.003aplx16c3zg2126m1zo1md3gvy].[:Measure Names]>]]></run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#757575'><![CDATA[Value: <[federated.003aplx16c3zg2126m1zo1md3gvy].[Multiple Values]>]]></run>
+              </formatted-text>
+            </customized-tooltip>
+            <style>
+              <style-rule element='mark'>
+                <format attr='size' value='1.0434806346893311' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.003aplx16c3zg2126m1zo1md3gvy].[Multiple Values]</rows>
+        <cols>([federated.003aplx16c3zg2126m1zo1md3gvy].[none:bucket:nk] / [federated.003aplx16c3zg2126m1zo1md3gvy].[:Measure Names])</cols>
+      </table>
+      <simple-id uuid='{16240EDE-B570-47F4-96FF-A4A44F8E2340}' />
+    </worksheet>
+    <worksheet name='Delivery Delay Impact by Traffic Congestion'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run fontalignment='1'>Delivery Delay Impact by Traffic Congestion
+</run>
+            <run fontalignment='1' fontsize='11'>Comparison of typical vs worst-case delivery delays</run>
+            <run fontalignment='1'>Æ&#10;</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='vw_driver_bucket_kpis_unified (logistics_operations)' name='federated.003aplx16c3zg2126m1zo1md3gvy' />
+          </datasources>
+          <datasource-dependencies datasource='federated.003aplx16c3zg2126m1zo1md3gvy'>
+            <column caption='Risk Level Definition' datatype='string' name='[Calculation_1523400449802240]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='CASE [bucket]&#13;&#10;WHEN &apos;Low&apos; THEN &apos;Lowest 33% of observed values&apos;&#13;&#10;WHEN &apos;Medium&apos; THEN &apos;Middle 33% of observed values&apos;&#13;&#10;WHEN &apos;High&apos; THEN &apos;Highest 33% of observed values&apos;&#13;&#10;END' />
+            </column>
+            <column-instance column='[median_delivery_time_deviation]' derivation='Avg' name='[avg:median_delivery_time_deviation:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[p95_delivery_time_deviation]' derivation='Avg' name='[avg:p95_delivery_time_deviation:qk]' pivot='key' type='quantitative' />
+            <column caption='Relative Risk Level' datatype='string' name='[bucket]' role='dimension' type='nominal' />
+            <column caption='Driver' datatype='string' name='[driver]' role='dimension' type='nominal' />
+            <column caption='Median Delivery Time Deviation' datatype='real' name='[median_delivery_time_deviation]' role='measure' type='quantitative' />
+            <column-instance column='[Calculation_1523400449802240]' derivation='None' name='[none:Calculation_1523400449802240:nk]' pivot='key' type='nominal' />
+            <column-instance column='[bucket]' derivation='None' name='[none:bucket:nk]' pivot='key' type='nominal' />
+            <column-instance column='[driver]' derivation='None' name='[none:driver:nk]' pivot='key' type='nominal' />
+            <column caption='P95 Delivery Time Deviation' datatype='real' name='[p95_delivery_time_deviation]' role='measure' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.003aplx16c3zg2126m1zo1md3gvy].[:Measure Names]'>
+            <groupfilter function='union' user:op='manual'>
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.003aplx16c3zg2126m1zo1md3gvy].[avg:median_delivery_time_deviation:qk]&quot;' />
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.003aplx16c3zg2126m1zo1md3gvy].[avg:p95_delivery_time_deviation:qk]&quot;' />
+            </groupfilter>
+          </filter>
+          <manual-sort column='[federated.003aplx16c3zg2126m1zo1md3gvy].[:Measure Names]' direction='ASC'>
+            <dictionary>
+              <bucket>&quot;[federated.003aplx16c3zg2126m1zo1md3gvy].[avg:median_delivery_time_deviation:qk]&quot;</bucket>
+              <bucket>&quot;[federated.003aplx16c3zg2126m1zo1md3gvy].[avg:p95_delivery_time_deviation:qk]&quot;</bucket>
+            </dictionary>
+          </manual-sort>
+          <manual-sort column='[federated.003aplx16c3zg2126m1zo1md3gvy].[none:bucket:nk]' direction='ASC'>
+            <dictionary>
+              <bucket>&quot;Low&quot;</bucket>
+              <bucket>&quot;Medium&quot;</bucket>
+              <bucket>&quot;High&quot;</bucket>
+            </dictionary>
+          </manual-sort>
+          <filter class='categorical' column='[federated.003aplx16c3zg2126m1zo1md3gvy].[none:driver:nk]'>
+            <groupfilter function='member' level='[none:driver:nk]' member='&quot;Traffic Congestion&quot;' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.003aplx16c3zg2126m1zo1md3gvy].[:Measure Names]</column>
+            <column>[federated.003aplx16c3zg2126m1zo1md3gvy].[none:driver:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <format attr='title' class='0' field='[federated.003aplx16c3zg2126m1zo1md3gvy].[Multiple Values]' scope='rows' value='Delivery Time Deviation (Hours)' />
+          </style-rule>
+          <style-rule element='label'>
+            <format attr='display' field='[federated.003aplx16c3zg2126m1zo1md3gvy].[:Measure Names]' value='false' />
+          </style-rule>
+          <style-rule element='gridline'>
+            <format attr='stroke-size' value='0' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane id='5' selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='off' />
+            </view>
+            <mark class='Bar' />
+            <mark-sizing mark-sizing-setting='marks-scaling-off' />
+            <encodings>
+              <color column='[federated.003aplx16c3zg2126m1zo1md3gvy].[:Measure Names]' />
+              <lod column='[federated.003aplx16c3zg2126m1zo1md3gvy].[none:Calculation_1523400449802240:nk]' />
+            </encodings>
+            <customized-tooltip>
+              <formatted-text>
+                <run fontcolor='#757575'>Relative Risk Level:&#9;</run>
+                <run bold='true'><![CDATA[<[federated.003aplx16c3zg2126m1zo1md3gvy].[none:bucket:nk]>]]></run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#757575'>Definition:</run>
+                <run bold='true'><![CDATA[<[federated.003aplx16c3zg2126m1zo1md3gvy].[none:Calculation_1523400449802240:nk]>]]></run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#757575'><![CDATA[Metric:<[federated.003aplx16c3zg2126m1zo1md3gvy].[:Measure Names]>]]></run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#757575'><![CDATA[Value: <[federated.003aplx16c3zg2126m1zo1md3gvy].[Multiple Values]>]]></run>
+              </formatted-text>
+            </customized-tooltip>
+            <style>
+              <style-rule element='mark'>
+                <format attr='size' value='1.0434806346893311' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.003aplx16c3zg2126m1zo1md3gvy].[Multiple Values]</rows>
+        <cols>([federated.003aplx16c3zg2126m1zo1md3gvy].[none:bucket:nk] / [federated.003aplx16c3zg2126m1zo1md3gvy].[:Measure Names])</cols>
+      </table>
+      <simple-id uuid='{AA7C4A64-28B9-46BC-A460-0EC2F3B281F6}' />
+    </worksheet>
+    <worksheet name='Delivery Delay Impact by Weather Severity'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run fontalignment='1'>Delivery Delay Impact by Weather Severity
+</run>
+            <run fontalignment='1' fontsize='11'>Comparison of typical vs worst-case delivery delays</run>
+            <run fontalignment='1'>Æ&#10;</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='vw_driver_bucket_kpis_unified (logistics_operations)' name='federated.003aplx16c3zg2126m1zo1md3gvy' />
+          </datasources>
+          <datasource-dependencies datasource='federated.003aplx16c3zg2126m1zo1md3gvy'>
+            <column caption='Risk Level Definition' datatype='string' name='[Calculation_1523400449802240]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='CASE [bucket]&#13;&#10;WHEN &apos;Low&apos; THEN &apos;Lowest 33% of observed values&apos;&#13;&#10;WHEN &apos;Medium&apos; THEN &apos;Middle 33% of observed values&apos;&#13;&#10;WHEN &apos;High&apos; THEN &apos;Highest 33% of observed values&apos;&#13;&#10;END' />
+            </column>
+            <column-instance column='[median_delivery_time_deviation]' derivation='Avg' name='[avg:median_delivery_time_deviation:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[p95_delivery_time_deviation]' derivation='Avg' name='[avg:p95_delivery_time_deviation:qk]' pivot='key' type='quantitative' />
+            <column caption='Relative Risk Level' datatype='string' name='[bucket]' role='dimension' type='nominal' />
+            <column caption='Driver' datatype='string' name='[driver]' role='dimension' type='nominal' />
+            <column caption='Median Delivery Time Deviation' datatype='real' name='[median_delivery_time_deviation]' role='measure' type='quantitative' />
+            <column-instance column='[Calculation_1523400449802240]' derivation='None' name='[none:Calculation_1523400449802240:nk]' pivot='key' type='nominal' />
+            <column-instance column='[bucket]' derivation='None' name='[none:bucket:nk]' pivot='key' type='nominal' />
+            <column-instance column='[driver]' derivation='None' name='[none:driver:nk]' pivot='key' type='nominal' />
+            <column caption='P95 Delivery Time Deviation' datatype='real' name='[p95_delivery_time_deviation]' role='measure' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.003aplx16c3zg2126m1zo1md3gvy].[:Measure Names]'>
+            <groupfilter function='union' user:op='manual'>
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.003aplx16c3zg2126m1zo1md3gvy].[avg:median_delivery_time_deviation:qk]&quot;' />
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.003aplx16c3zg2126m1zo1md3gvy].[avg:p95_delivery_time_deviation:qk]&quot;' />
+            </groupfilter>
+          </filter>
+          <manual-sort column='[federated.003aplx16c3zg2126m1zo1md3gvy].[:Measure Names]' direction='ASC'>
+            <dictionary>
+              <bucket>&quot;[federated.003aplx16c3zg2126m1zo1md3gvy].[avg:median_delivery_time_deviation:qk]&quot;</bucket>
+              <bucket>&quot;[federated.003aplx16c3zg2126m1zo1md3gvy].[avg:p95_delivery_time_deviation:qk]&quot;</bucket>
+            </dictionary>
+          </manual-sort>
+          <manual-sort column='[federated.003aplx16c3zg2126m1zo1md3gvy].[none:bucket:nk]' direction='ASC'>
+            <dictionary>
+              <bucket>&quot;Low&quot;</bucket>
+              <bucket>&quot;Medium&quot;</bucket>
+              <bucket>&quot;High&quot;</bucket>
+            </dictionary>
+          </manual-sort>
+          <filter class='categorical' column='[federated.003aplx16c3zg2126m1zo1md3gvy].[none:driver:nk]'>
+            <groupfilter function='member' level='[none:driver:nk]' member='&quot;Weather Severity&quot;' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.003aplx16c3zg2126m1zo1md3gvy].[:Measure Names]</column>
+            <column>[federated.003aplx16c3zg2126m1zo1md3gvy].[none:driver:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <format attr='title' class='0' field='[federated.003aplx16c3zg2126m1zo1md3gvy].[Multiple Values]' scope='rows' value='Delivery Time Deviation (Hours)' />
+          </style-rule>
+          <style-rule element='label'>
+            <format attr='display' field='[federated.003aplx16c3zg2126m1zo1md3gvy].[:Measure Names]' value='false' />
+          </style-rule>
+          <style-rule element='gridline'>
+            <format attr='stroke-size' value='0' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane id='5' selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='off' />
+            </view>
+            <mark class='Bar' />
+            <mark-sizing mark-sizing-setting='marks-scaling-off' />
+            <encodings>
+              <color column='[federated.003aplx16c3zg2126m1zo1md3gvy].[:Measure Names]' />
+              <lod column='[federated.003aplx16c3zg2126m1zo1md3gvy].[none:Calculation_1523400449802240:nk]' />
+            </encodings>
+            <customized-tooltip>
+              <formatted-text>
+                <run fontcolor='#757575'>Relative Risk Level:&#9;</run>
+                <run bold='true'><![CDATA[<[federated.003aplx16c3zg2126m1zo1md3gvy].[none:bucket:nk]>]]></run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#757575'>Definition:</run>
+                <run bold='true'><![CDATA[<[federated.003aplx16c3zg2126m1zo1md3gvy].[none:Calculation_1523400449802240:nk]>]]></run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#757575'><![CDATA[Metric:<[federated.003aplx16c3zg2126m1zo1md3gvy].[:Measure Names]>]]></run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#757575'><![CDATA[Value: <[federated.003aplx16c3zg2126m1zo1md3gvy].[Multiple Values]>]]></run>
+              </formatted-text>
+            </customized-tooltip>
+            <style>
+              <style-rule element='mark'>
+                <format attr='size' value='1.0434806346893311' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.003aplx16c3zg2126m1zo1md3gvy].[Multiple Values]</rows>
+        <cols>([federated.003aplx16c3zg2126m1zo1md3gvy].[none:bucket:nk] / [federated.003aplx16c3zg2126m1zo1md3gvy].[:Measure Names])</cols>
+      </table>
+      <simple-id uuid='{F347AA91-A87B-4F1D-A44A-FCC4060C909F}' />
+    </worksheet>
+    <worksheet name='Typical Delay Impact by Driver '>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run fontalignment='1' fontcolor='#000000' fontname='Tableau Light' fontsize='14' lmargin='600' rmargin='600'>Operational Drivers Affecting Typical Delivery Delays</run>
+            <run fontalignment='1' lmargin='600' rmargin='600'>Æ&#10;</run>
+            <run fontalignment='1' fontcolor='#000000' fontname='Tableau Light' fontsize='9' lmargin='600' rmargin='600'>Change in median delivery delay when conditions shift from Low to High risk </run>
+            <run fontalignment='1' lmargin='600' rmargin='600'>Æ&#10;&#10;&#10;</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='vw_driver_bucket_kpis_unified (logistics_operations)' name='federated.003aplx16c3zg2126m1zo1md3gvy' />
+            <datasource name='Parameters' />
+          </datasources>
+          <datasource-dependencies datasource='Parameters'>
+            <column caption='Parameter 1' datatype='real' name='[Parameter 1]' param-domain-type='any' role='measure' type='quantitative' value='0.0'>
+              <calculation class='tableau' formula='0.0' />
+            </column>
+          </datasource-dependencies>
+          <datasource-dependencies datasource='federated.003aplx16c3zg2126m1zo1md3gvy'>
+            <column caption='Typical Impact Direction' datatype='string' name='[Calculation_1523400758198275]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='IF [typical_delay_increase_hours] &gt;= 0 THEN &quot;Increase&quot;&#13;&#10;ELSE &quot;Decrease&quot;&#13;&#10;END' />
+            </column>
+            <column-instance column='[typical_delay_increase_hours]' derivation='Avg' name='[avg:typical_delay_increase_hours:qk]' pivot='key' type='quantitative' />
+            <column caption='Operational Driver' datatype='string' name='[driver (vw_driver_impact_ranking)]' role='dimension' type='nominal' />
+            <column-instance column='[worst_case_delay_increase_hours]' derivation='Min' name='[min:worst_case_delay_increase_hours:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_1523400758198275]' derivation='None' name='[none:Calculation_1523400758198275:nk]' pivot='key' type='nominal' />
+            <column-instance column='[driver (vw_driver_impact_ranking)]' derivation='None' name='[none:driver (vw_driver_impact_ranking):nk]' pivot='key' type='nominal' />
+            <column caption='Typical Delay Increase Hours' datatype='real' name='[typical_delay_increase_hours]' role='measure' type='quantitative' />
+            <column caption='Worst Case Delay Increase Hours' datatype='real' name='[worst_case_delay_increase_hours]' role='measure' type='quantitative' />
+          </datasource-dependencies>
+          <manual-sort column='[federated.003aplx16c3zg2126m1zo1md3gvy].[none:Calculation_1523400758198275:nk]' direction='ASC'>
+            <dictionary>
+              <bucket>&quot;Increase&quot;</bucket>
+              <bucket>&quot;Decrease&quot;</bucket>
+            </dictionary>
+          </manual-sort>
+          <computed-sort column='[federated.003aplx16c3zg2126m1zo1md3gvy].[none:driver (vw_driver_impact_ranking):nk]' direction='DESC' using='[federated.003aplx16c3zg2126m1zo1md3gvy].[min:worst_case_delay_increase_hours:qk]' />
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <format attr='title' class='0' field='[federated.003aplx16c3zg2126m1zo1md3gvy].[avg:typical_delay_increase_hours:qk]' scope='cols' value='Change in Typical Delivery Delay (High vs Low, hours)' />
+          </style-rule>
+          <style-rule element='label'>
+            <format attr='text-format' field='[federated.003aplx16c3zg2126m1zo1md3gvy].[min:worst_case_delay_increase_hours:qk]' value='n#,##0.000;-#,##0.000' />
+          </style-rule>
+          <style-rule element='mark'>
+            <encoding attr='color' field='[federated.003aplx16c3zg2126m1zo1md3gvy].[min:worst_case_delay_increase_hours:qk]' palette='blue_teal_10_0' type='interpolated' />
+          </style-rule>
+          <style-rule element='refline'>
+            <format attr='fill-above' id='refline0' value='#00000000' />
+            <format attr='fill-below' id='refline0' value='#00000000' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane id='2' selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.003aplx16c3zg2126m1zo1md3gvy].[none:Calculation_1523400758198275:nk]' />
+            </encodings>
+          </pane>
+        </panes>
+        <rows>[federated.003aplx16c3zg2126m1zo1md3gvy].[none:driver (vw_driver_impact_ranking):nk]</rows>
+        <cols>[federated.003aplx16c3zg2126m1zo1md3gvy].[avg:typical_delay_increase_hours:qk]</cols>
+      </table>
+      <simple-id uuid='{C7FE8465-8C7B-4BF8-8712-E6C1790833C2}' />
+    </worksheet>
+    <worksheet name='Worst-Case Delay Impact by Driver'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run fontalignment='1' fontcolor='#000000' fontname='Tableau Light' fontsize='14' lmargin='600' rmargin='600'>Operational Drivers with the Largest Worst-Case Delivery Delays</run>
+            <run fontalignment='1' lmargin='600' rmargin='600'>Æ&#10;</run>
+            <run fontalignment='1' fontcolor='#000000' fontname='Tableau Light' fontsize='10' lmargin='600' rmargin='600'>Change in P95 delivery delay when conditions shift from Low to High risk </run>
+            <run fontalignment='1' lmargin='600' rmargin='600'>Æ&#10;&#10;</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='vw_driver_bucket_kpis_unified (logistics_operations)' name='federated.003aplx16c3zg2126m1zo1md3gvy' />
+            <datasource name='Parameters' />
+          </datasources>
+          <datasource-dependencies datasource='Parameters'>
+            <column caption='Parameter 1' datatype='real' name='[Parameter 1]' param-domain-type='any' role='measure' type='quantitative' value='0.0'>
+              <calculation class='tableau' formula='0.0' />
+            </column>
+          </datasource-dependencies>
+          <datasource-dependencies datasource='federated.003aplx16c3zg2126m1zo1md3gvy'>
+            <column caption='Worst Case Impact Direction' datatype='string' name='[Calculation_1523400757608450]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='IF [worst_case_delay_increase_hours] &gt;= 0 THEN &quot;Increase&quot;&#13;&#10;ELSE &quot;Decrease&quot;&#13;&#10;END' />
+            </column>
+            <column-instance column='[worst_case_delay_increase_hours]' derivation='Avg' name='[avg:worst_case_delay_increase_hours:qk]' pivot='key' type='quantitative' />
+            <column caption='Operational Driver' datatype='string' name='[driver (vw_driver_impact_ranking)]' role='dimension' type='nominal' />
+            <column-instance column='[worst_case_delay_increase_hours]' derivation='Min' name='[min:worst_case_delay_increase_hours:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_1523400757608450]' derivation='None' name='[none:Calculation_1523400757608450:nk]' pivot='key' type='nominal' />
+            <column-instance column='[driver (vw_driver_impact_ranking)]' derivation='None' name='[none:driver (vw_driver_impact_ranking):nk]' pivot='key' type='nominal' />
+            <column caption='Worst Case Delay Increase Hours' datatype='real' name='[worst_case_delay_increase_hours]' role='measure' type='quantitative' />
+          </datasource-dependencies>
+          <manual-sort column='[federated.003aplx16c3zg2126m1zo1md3gvy].[none:Calculation_1523400757608450:nk]' direction='ASC'>
+            <dictionary>
+              <bucket>&quot;Increase&quot;</bucket>
+              <bucket>&quot;Decrease&quot;</bucket>
+            </dictionary>
+          </manual-sort>
+          <computed-sort column='[federated.003aplx16c3zg2126m1zo1md3gvy].[none:driver (vw_driver_impact_ranking):nk]' direction='DESC' using='[federated.003aplx16c3zg2126m1zo1md3gvy].[min:worst_case_delay_increase_hours:qk]' />
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <format attr='title' class='0' field='[federated.003aplx16c3zg2126m1zo1md3gvy].[avg:worst_case_delay_increase_hours:qk]' scope='cols' value='Change in Worst-Case Delivery Delay (High vs Low, hours)' />
+          </style-rule>
+          <style-rule element='label'>
+            <format attr='text-format' field='[federated.003aplx16c3zg2126m1zo1md3gvy].[min:worst_case_delay_increase_hours:qk]' value='n#,##0.000;-#,##0.000' />
+            <format attr='text-format' field='[federated.003aplx16c3zg2126m1zo1md3gvy].[avg:worst_case_delay_increase_hours:qk]' value='n#,##0.000;-#,##0.000' />
+          </style-rule>
+          <style-rule element='mark'>
+            <encoding attr='color' field='[federated.003aplx16c3zg2126m1zo1md3gvy].[min:worst_case_delay_increase_hours:qk]' palette='blue_teal_10_0' type='interpolated' />
+            <encoding attr='color' field='[federated.003aplx16c3zg2126m1zo1md3gvy].[avg:worst_case_delay_increase_hours:qk]' palette='blue_teal_10_0' type='interpolated' />
+          </style-rule>
+          <style-rule element='refline'>
+            <format attr='fill-above' id='refline0' value='#00000000' />
+            <format attr='fill-below' id='refline0' value='#00000000' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.003aplx16c3zg2126m1zo1md3gvy].[none:Calculation_1523400757608450:nk]' />
+            </encodings>
+            <reference-line axis-column='[federated.003aplx16c3zg2126m1zo1md3gvy].[avg:worst_case_delay_increase_hours:qk]' enable-instant-analytics='true' formula='average' id='refline0' label-type='none' probability='95' scope='per-table' value-column='[Parameters].[Parameter 1]' z-order='1' />
+          </pane>
+        </panes>
+        <rows>[federated.003aplx16c3zg2126m1zo1md3gvy].[none:driver (vw_driver_impact_ranking):nk]</rows>
+        <cols>[federated.003aplx16c3zg2126m1zo1md3gvy].[avg:worst_case_delay_increase_hours:qk]</cols>
+      </table>
+      <simple-id uuid='{F832DF9E-A615-4184-B918-D011621955F0}' />
+    </worksheet>
+  </worksheets>
+  <dashboards>
+    <dashboard enable-sort-zone-taborder='true' name='Dashboard 1'>
+      <style />
+      <size maxheight='800' maxwidth='1200' minheight='800' minwidth='1200' sizing-mode='fixed' />
+      <zones>
+        <zone h='100000' id='4' type-v2='layout-basic' w='100000' x='0' y='0'>
+          <zone h='68250' id='7' param='horz' type-v2='layout-flow' w='98666' x='667' y='8000'>
+            <zone h='68250' id='5' type-v2='layout-basic' w='85333' x='667' y='8000'>
+              <zone h='34128' id='3' name='Worst-Case Delay Impact by Driver' w='85333' x='667' y='8000'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+              <zone h='34122' id='9' name='Typical Delay Impact by Driver ' w='85333' x='667' y='42128'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+            </zone>
+            <zone fixed-size='160' h='68250' id='6' is-fixed='true' param='vert' type-v2='layout-flow' w='13333' x='86000' y='8000'>
+              <zone h='8250' id='8' name='Worst-Case Delay Impact by Driver' pane-specification-id='0' param='[federated.003aplx16c3zg2126m1zo1md3gvy].[none:Calculation_1523400757608450:nk]' type-v2='color' w='13333' x='86000' y='8000'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+              <zone h='8250' id='10' name='Typical Delay Impact by Driver ' pane-specification-id='2' param='[federated.003aplx16c3zg2126m1zo1md3gvy].[none:Calculation_1523400758198275:nk]' type-v2='color' w='13333' x='86000' y='16250'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+            </zone>
+          </zone>
+          <zone h='22750' id='11' type-v2='text' w='98666' x='667' y='76250'>
+            <formatted-text>
+              <run bold='true' fontcolor='#000000' fontname='Tableau Light'>Key Findings</run>
+              <run>Æ&#10;</run>
+              <run bold='true' fontcolor='#000000' fontname='Tableau Light'>Port Congestion</run>
+              <run fontcolor='#000000' fontname='Tableau Light'> and </run>
+              <run bold='true' fontcolor='#000000' fontname='Tableau Light'>Route Risk</run>
+              <run fontcolor='#000000' fontname='Tableau Light'> consistently drive the largest increases in delivery delays across both worst-case and typical scenarios, indicating structural operational risk.</run>
+              <run>Æ&#10;</run>
+              <run bold='true' fontcolor='#000000' fontname='Tableau Light'>Weather Severity</run>
+              <run fontcolor='#000000' fontname='Tableau Light'> primarily impacts worst-case delays, suggesting it is a contingency risk rather than a day-to-day driver.</run>
+              <run>Æ&#10;</run>
+              <run bold='true' fontcolor='#000000' fontname='Tableau Light'>Traffic Congestion</run>
+              <run fontcolor='#000000' fontname='Tableau Light'> does not materially increase delays and may reflect effective buffering or adaptive routing behavior.</run>
+              <run>Æ&#10;</run>
+              <run bold='true' fontcolor='#000000' fontname='Tableau Light'>Recommendations</run>
+              <run>Æ&#10;</run>
+              <run fontcolor='#000000' fontname='Tableau Light'>Prioritize mitigation strategies for Port Congestion and Route Risk (capacity planning, routing policies, contingency buffers).</run>
+              <run>Æ&#10;</run>
+              <run fontcolor='#000000' fontname='Tableau Light'>Treat Weather Severity as a risk management concern rather than a primary optimization lever.</run>
+              <run>Æ&#10;</run>
+              <run fontcolor='#000000' fontname='Tableau Light'>Avoid over-investing in traffic congestion mitigation without more granular evidence.</run>
+            </formatted-text>
+            <zone-style>
+              <format attr='border-color' value='#000000' />
+              <format attr='border-style' value='none' />
+              <format attr='border-width' value='0' />
+              <format attr='margin' value='4' />
+            </zone-style>
+          </zone>
+          <zone forceUpdate='true' h='7000' id='12' type-v2='text' w='98666' x='667' y='1000'>
+            <formatted-text>
+              <run fontalignment='1' fontcolor='#000000' fontname='Tableau Light' fontsize='14' lmargin='600' rmargin='600'>Operational Drivers of Delivery Delays: Typical vs Worst-Case Impact</run>
+              <run lmargin='600' rmargin='600'>Æ&#10;</run>
+            </formatted-text>
+            <zone-style>
+              <format attr='border-color' value='#000000' />
+              <format attr='border-style' value='none' />
+              <format attr='border-width' value='0' />
+              <format attr='margin' value='4' />
+            </zone-style>
+          </zone>
+          <zone-style>
+            <format attr='border-color' value='#000000' />
+            <format attr='border-style' value='none' />
+            <format attr='border-width' value='0' />
+            <format attr='margin' value='8' />
+          </zone-style>
+        </zone>
+      </zones>
+      <devicelayouts>
+        <devicelayout auto-generated='true' name='Phone'>
+          <size maxheight='850' minheight='850' sizing-mode='vscroll' />
+          <zones>
+            <zone h='100000' id='14' type-v2='layout-basic' w='100000' x='0' y='0'>
+              <zone h='98000' id='13' param='vert' type-v2='layout-flow' w='98666' x='667' y='1000'>
+                <zone forceUpdate='true' h='7000' id='12' type-v2='text' w='98666' x='667' y='1000'>
+                  <formatted-text>
+                    <run fontalignment='1' fontcolor='#000000' fontname='Tableau Light' fontsize='14' lmargin='600' rmargin='600'>Operational Drivers of Delivery Delays: Typical vs Worst-Case Impact</run>
+                    <run lmargin='600' rmargin='600'>Æ&#10;</run>
+                  </formatted-text>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='265' h='34128' id='3' is-fixed='true' name='Worst-Case Delay Impact by Driver' w='85333' x='667' y='8000'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='8250' id='8' name='Worst-Case Delay Impact by Driver' pane-specification-id='0' param='[federated.003aplx16c3zg2126m1zo1md3gvy].[none:Calculation_1523400757608450:nk]' type-v2='color' w='13333' x='86000' y='8000'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='265' h='34122' id='9' is-fixed='true' name='Typical Delay Impact by Driver ' w='85333' x='667' y='42128'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='8250' id='10' name='Typical Delay Impact by Driver ' pane-specification-id='2' param='[federated.003aplx16c3zg2126m1zo1md3gvy].[none:Calculation_1523400758198275:nk]' type-v2='color' w='13333' x='86000' y='16250'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='22750' id='11' type-v2='text' w='98666' x='667' y='76250'>
+                  <formatted-text>
+                    <run bold='true' fontcolor='#000000' fontname='Tableau Light'>Key Findings</run>
+                    <run>Æ&#10;</run>
+                    <run bold='true' fontcolor='#000000' fontname='Tableau Light'>Port Congestion</run>
+                    <run fontcolor='#000000' fontname='Tableau Light'> and </run>
+                    <run bold='true' fontcolor='#000000' fontname='Tableau Light'>Route Risk</run>
+                    <run fontcolor='#000000' fontname='Tableau Light'> consistently drive the largest increases in delivery delays across both worst-case and typical scenarios, indicating structural operational risk.</run>
+                    <run>Æ&#10;</run>
+                    <run bold='true' fontcolor='#000000' fontname='Tableau Light'>Weather Severity</run>
+                    <run fontcolor='#000000' fontname='Tableau Light'> primarily impacts worst-case delays, suggesting it is a contingency risk rather than a day-to-day driver.</run>
+                    <run>Æ&#10;</run>
+                    <run bold='true' fontcolor='#000000' fontname='Tableau Light'>Traffic Congestion</run>
+                    <run fontcolor='#000000' fontname='Tableau Light'> does not materially increase delays and may reflect effective buffering or adaptive routing behavior.</run>
+                    <run>Æ&#10;</run>
+                    <run bold='true' fontcolor='#000000' fontname='Tableau Light'>Recommendations</run>
+                    <run>Æ&#10;</run>
+                    <run fontcolor='#000000' fontname='Tableau Light'>Prioritize mitigation strategies for Port Congestion and Route Risk (capacity planning, routing policies, contingency buffers).</run>
+                    <run>Æ&#10;</run>
+                    <run fontcolor='#000000' fontname='Tableau Light'>Treat Weather Severity as a risk management concern rather than a primary optimization lever.</run>
+                    <run>Æ&#10;</run>
+                    <run fontcolor='#000000' fontname='Tableau Light'>Avoid over-investing in traffic congestion mitigation without more granular evidence.</run>
+                  </formatted-text>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+              </zone>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='8' />
+              </zone-style>
+            </zone>
+          </zones>
+        </devicelayout>
+      </devicelayouts>
+      <simple-id uuid='{D4327A91-05FE-40B2-A503-0547A544DDD4}' />
+    </dashboard>
+  </dashboards>
+  <windows source-height='48'>
+    <window class='worksheet' name='Delivery Delay Impact by Port Congestion Level'>
+      <cards>
+        <edge name='left'>
+          <strip size='300'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+            <card type='measures' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='194'>
+            <card param='[federated.003aplx16c3zg2126m1zo1md3gvy].[none:driver:nk]' type='filter' />
+            <card pane-specification-id='5' param='[federated.003aplx16c3zg2126m1zo1md3gvy].[:Measure Names]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[federated.003aplx16c3zg2126m1zo1md3gvy].[none:Calculation_1523400449802240:nk]</field>
+            <field>[federated.003aplx16c3zg2126m1zo1md3gvy].[none:bucket:nk]</field>
+            <field>[federated.003aplx16c3zg2126m1zo1md3gvy].[none:driver:nk]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{403A0009-F2C0-48BF-8F93-6CD253187788}' />
+    </window>
+    <window class='worksheet' name='Delivery Delay Impact by Weather Severity'>
+      <cards>
+        <edge name='left'>
+          <strip size='300'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+            <card type='measures' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='194'>
+            <card pane-specification-id='5' param='[federated.003aplx16c3zg2126m1zo1md3gvy].[:Measure Names]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[federated.003aplx16c3zg2126m1zo1md3gvy].[none:Calculation_1523400449802240:nk]</field>
+            <field>[federated.003aplx16c3zg2126m1zo1md3gvy].[none:bucket:nk]</field>
+            <field>[federated.003aplx16c3zg2126m1zo1md3gvy].[none:driver:nk]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{A6D62FD7-C540-40FE-9F4A-CF33E017C8CA}' />
+    </window>
+    <window class='worksheet' name='Delivery Delay Impact by Route Risk'>
+      <cards>
+        <edge name='left'>
+          <strip size='300'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+            <card type='measures' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='194'>
+            <card pane-specification-id='5' param='[federated.003aplx16c3zg2126m1zo1md3gvy].[:Measure Names]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[federated.003aplx16c3zg2126m1zo1md3gvy].[none:Calculation_1523400449802240:nk]</field>
+            <field>[federated.003aplx16c3zg2126m1zo1md3gvy].[none:bucket:nk]</field>
+            <field>[federated.003aplx16c3zg2126m1zo1md3gvy].[none:driver:nk]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{AFBA6748-C1CC-4057-8E91-1AD01BDC1D5A}' />
+    </window>
+    <window class='worksheet' name='Delivery Delay Impact by Traffic Congestion'>
+      <cards>
+        <edge name='left'>
+          <strip size='300'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+            <card type='measures' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='194'>
+            <card pane-specification-id='5' param='[federated.003aplx16c3zg2126m1zo1md3gvy].[:Measure Names]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[federated.003aplx16c3zg2126m1zo1md3gvy].[none:Calculation_1523400449802240:nk]</field>
+            <field>[federated.003aplx16c3zg2126m1zo1md3gvy].[none:bucket:nk]</field>
+            <field>[federated.003aplx16c3zg2126m1zo1md3gvy].[none:driver:nk]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{9A5C1127-D897-4A96-AFF2-BCA7D26DF1C7}' />
+    </window>
+    <window class='worksheet' name='Worst-Case Delay Impact by Driver'>
+      <cards>
+        <edge name='left'>
+          <strip size='169'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='106'>
+            <card pane-specification-id='0' param='[federated.003aplx16c3zg2126m1zo1md3gvy].[none:Calculation_1523400757608450:nk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[federated.003aplx16c3zg2126m1zo1md3gvy].[min:worst_case_delay_increase_hours:qk]</field>
+            <field>[federated.003aplx16c3zg2126m1zo1md3gvy].[none:Calculation_1523400521445377:nk]</field>
+            <field>[federated.003aplx16c3zg2126m1zo1md3gvy].[none:Calculation_1523400757608450:nk]</field>
+            <field>[federated.003aplx16c3zg2126m1zo1md3gvy].[none:driver (vw_driver_impact_ranking):nk]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{B25E8BAF-BC57-4F2A-AD54-18D3AAA9B290}' />
+    </window>
+    <window class='worksheet' name='Typical Delay Impact by Driver '>
+      <cards>
+        <edge name='left'>
+          <strip size='169'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='106'>
+            <card pane-specification-id='2' param='[federated.003aplx16c3zg2126m1zo1md3gvy].[none:Calculation_1523400758198275:nk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[federated.003aplx16c3zg2126m1zo1md3gvy].[min:worst_case_delay_increase_hours:qk]</field>
+            <field>[federated.003aplx16c3zg2126m1zo1md3gvy].[none:Calculation_1523400521445377:nk]</field>
+            <field>[federated.003aplx16c3zg2126m1zo1md3gvy].[none:Calculation_1523400758198275:nk]</field>
+            <field>[federated.003aplx16c3zg2126m1zo1md3gvy].[none:driver (vw_driver_impact_ranking):nk]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{7E1B02A5-A98B-484E-9B99-3A216EB6C611}' />
+    </window>
+    <window class='dashboard' maximized='true' name='Dashboard 1'>
+      <viewpoints>
+        <viewpoint name='Typical Delay Impact by Driver '>
+          <highlight>
+            <color-one-way>
+              <field>[federated.003aplx16c3zg2126m1zo1md3gvy].[none:Calculation_1523400758198275:nk]</field>
+            </color-one-way>
+          </highlight>
+        </viewpoint>
+        <viewpoint name='Worst-Case Delay Impact by Driver'>
+          <highlight>
+            <color-one-way>
+              <field>[federated.003aplx16c3zg2126m1zo1md3gvy].[none:Calculation_1523400757608450:nk]</field>
+            </color-one-way>
+          </highlight>
+        </viewpoint>
+      </viewpoints>
+      <active id='-1' />
+      <simple-id uuid='{CE1412AC-1F05-455B-8BC9-F21963E1A3E1}' />
+    </window>
+  </windows>
+  <thumbnails>
+    <thumbnail height='192' name='Dashboard 1' width='192'>
+      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
+      Hr/8+GMuXvwG27OQRZUP3n8fz+6x7MHNKzd5e3DvB7y1SBrZWeTCxWsM9oW4fHsMgJWFFSZH
+      Q6wWVIqbJdbmr+ysvyawkbf4H/7iJF9fvIYsWAwMDu3WN5FWuXruEmXLYf7SJcYmR3Zegr/X
+      /jtv9LMte2yXDdrFPKMHHv5Bcf8W6EESk/RWL3H92mUENUG7VuT61SvI4QSDg8P0HzzBZEJl
+      ZHSU5tYcVUcFPGKZALe+uYUNoCUprc1yZ71EPMDud9Dm7twhEAzCA1mdL539gs8/u8jBk4cZ
+      HR3ZXf72kVH+9uIaU6ODDPfFOHHqJKocYnQwTSKeIBbRuHZzFpwuAxNv8k//zb/DzN3euz1a
+      fNe2LyJz5coV8uUmjXKZUvXe64TfSSXRbda4euPO97ollJkkf+szBmdO0KwUuHblMlp854wa
+      kT2uXLnK3NWrdGUN74E3GxduX+fMV1+SHJpgYHCQeP9BDk9++2msoQMnOPvf/pKjJ4/tWT8y
+      MgZSCNnMo8QGgZ1XJ7/88ituFl3enBkkFgxx8sRxAEqLd3fbP3jyPf72P/0Nbx2foK9vhLnb
+      tx6+vz2f7+G6jtfpdD3P87xz5y54lmXtLrcse0/Z++se/G2buqebe8t6rrunzNPgOM69v7Zn
+      286edaZpPmUd39reb9+xbc9x3O+Vnb993fvyd3/tbTf3+qm3a97vPz/jeZ7nfXn+/CP74Ynb
+      94g+uL+d31vv6N7f/+3vPfP7rnqe53m2be3Zjvu2lfymd/aba7tlbMd5qL3/QozPvsa/BXpK
+      GpUiy6sbbGyuY1k2jm3jeffzX3rYto1rm1iOR7fVwvZcLGtnnWmaO789D8M08VyXjY0NWq0W
+      9r16dsqC49hsbm1iGAalUolWq3Xv3tbDMAw8z8NxnJ2EVJ6H6zhsbG7tlvdcF8d1d208z8N1
+      XTy9yMp2Cw8PwzBxXQfLsu+16WCaBq6346sH5NbWqbRaVCsVuo0m1j3fXcfGsh1s2971t7G5
+      Sdk0abVarC/Ps7K+he045DZXyZVquK6767tlWbvbmstl72WVs77109vJB+vcswHI5nLksjla
+      rRau4+DubsvOq5fNZnN3u7c2N3mWc7ofBD8ltWaHmakprly+RKvdxerW0CsV1L5+KnacqNgh
+      LEuo4SjhgEZ9aQFLUnn7xDDXztzEkUSaWprhuIyKi2HbCHaLGytrNOR++uIaP3v7AHdvb1HM
+      LtIYHIZYHwnDoFTK0cgWEGJRak2d6cEUlWaPwydPsn73Nq1ilmJjEIEY3UaV1WKN4UQAKTIE
+      VpOtzRzj/QIFPcLiLZ2B4Tim1SYYjJKOBLDlMJ16AUnpUS3K9IweEU0lIUs4zQaxQIhyLouE
+      gN6sE4xGqBe2OXr616zdvoSig1HO48SHUOstpICFbqQpVetoToW2HkdvCFS2lvHiccJakJ+d
+      Okm73WJhvokrCKj02CzrTAyPYeoNKqU8qucRnj7G6tI8rhhiamKY9bUVnF6BrtyHpU/RKNwk
+      3j9OfnsDKRBn4eYl4plBosFHpIF4AP8W6CnpNKtsF1ukkju5JVu1Crgu6cE+toptNjfWOXF4
+      CkmLEFBlLNMEAdLpEOX8Tk6fhiWgiB6SY6A7kApKlFpNXDlFJqaQSSdZWVhAkBRsJNLpFLII
+      vXqFUDpDPlckEosz2JfiypWrvPvuu6yvLOAJEqYNiXQaz+jQ6Ji0a2VOvvcejdw6XUEhpCi4
+      ika71MBRROJhDRCIahLbtR6K20MOKChSnE69RKNrMjI5gt1pIUkaDjbtrkkiElLLIPUAACAA
+      SURBVALBo9eqEUpNYnWK9Bo9UsNJmpZK0DORBRdHCeNaOqoHwUyCzYUlkIKE4mFkATLpNHdu
+      XSOa6MdyXRTPQZEgMjRJt5wFQaBW7zJzaIZ6tYLggaIqrK/MYzku4wePgCkjCF0URcWxDNq6
+      jeTohJKDJKKP/2rpfXwBPAc8x6JruoSD2gtpz7UtbERU+dGpsnVdJxAIPHL960q30yEQCj23
+      3Ky+AHz2NX4Q7LOv8QXgs6/xBeCzr/EF4LOv8QXgs6/xBeCzr/EF4LOv8QXgs6/xBeCzr/EF
+      4LOv8QXgs6/xBeCzr/EF4LOv8QXgs6/xBeCzr/EF4LOv8QXgs6/xBeCzr/EF4LOv8QXgs695
+      JfICOY6DJD06w8HDsG0bWX5293/qdnNrBSz32TMmuK6DKD7bPvix7fqTYQbupaG5z/Puz8fU
+      5NFud9B1nWAwSDj8rSOmYYBpQjSK+oBVKZ8lEEsRDT08JYeu6wiigKa+mBQi+43/5/e3mV19
+      eM7+143/8U+P86//9PiP2sZjBCBQr2QpVG0G+8NsrKwQTiQo5CtEowpxWaORzyEqKq7lIHsW
+      Y1MHabWaSCLcWi6jRjOkwgr1ShFNhpaUJqmYFCsNhoYGEID+/oenrfbxeRE89lpiGR6T4/3o
+      rous6Hi2QyQcJJaIIFkwHA9QqPeIRkIEVBlNkQiGQnTaXdRghKG4SqXjIskK0WiAcGwQq1Eg
+      Hg2D2YbwwIvaTh+fh/LSEmM1m01isRjgxwDP0+7vzs9R79rPbOe6LqL47GMiP6bd8al+3pze
+      e4fwAmOAH5f7B7/P82VqKPmTCYIBbq3sjWeed3tPJYBCdhslHCUV//agNQwDTdOolAoooRix
+      8OOTkRqmged6P8l8la8SP6Ug+EXwVAKoVSvIvQ61UgXRNiEWpVEs8+Zbh+n0PNJql7XVbQxH
+      RpYEgoqII3i0qw2QREKJftrVLKFYmoDkodsg2AZyMMrosB8H+Lw8nkoAfUMjpJMRVtdySJJC
+      3/Awgq4DKrbZotkOIggiWjBMNCBi9Nr0dAtZUUlmMlRqdRLxBBYCgiggSRCOpOB7H8708Xmx
+      /ChBcKtRwxNVYtHwkwvjB8HP0+6nFAS/CLsfJQiOxpNPLuTzo7BzInl2AexXfrgA7DaL61XS
+      6SSRkIai7HyaptlsEo1GsW0HVRVYXlwnnk4RDoZQVZl6o04qmdr9hKjP8+HLG5t+EPwM/HAB
+      uAaVahPR1ekFJLI1l/64gtHrUsqL9FyJN49MUK9UiaRibC7M09XCxIUePUtkdMC/Wvi8PH64
+      AKQgR4/M0GvVMSyL8aEQ3W6XTCaN4woEHA+QOHT0CIbZIzU4SMBySCb6sEz/Uu3zcnklPpHk
+      B8HPz+6nNBv0Rdi9VgIwzv+H3d+vyijCq2ZnTf2ayODBZ7Z7XQT+QqZCOJbBjZu3GZ+aQRZd
+      bMMAu8tqVcfpGRw5PI3Z00kN9rG+tExmYIBmo0M8FqBruIQ0CccTca0eihbGtB1qpSzhRB+x
+      oIJug2f1kINREk85VApgXvgPTy60z5H6TwDPLoD9ykMFICka6XQaq9sgkkmTr5cwqhbTxw9i
+      Vlq0iisImWNI2EhKGLPZJJVQuLvRZDip0jBsEEzaDY9gqANykFA0jtHrUDN3zvSSJGG1m88k
+      AJ8n4zjOy3bhteKRt0C6ru883VVl8vkc0UgCNRzEtRwQXOrlCpnhYZqVIqISoNvpkUolAGjV
+      KzR1l2hAQlICOB5okocraaiCi+lAMKABHpqmYdv2Uw2HfvcK4HneHzWE+lO3Ew79BiU1/sx2
+      r8st3vO2eyVigD+GPyZw9u18uwd5bQXg4/M8eK2yQvQ6LbbzO085G6UsHQty2xt0euZT21VK
+      BWrNFvnsFu2u/ox2bQq5bbr649vzXIv11Q1sDzqtOvliGc82yJdqz2xXLRep1BqPtatXSpRr
+      TeBef3Q6u/U8i12r2WR7exvdch9r991+ud//xXyeJ0Uf3/Oz12NrYwP7CYbf87PVYmtrC+MJ
+      G/hdu2wuu6d/7/PaCKDbbpIv18EycICw4tDUO3hCjGq58NR2uuXQbpSolGrU6o8+sB5ulyWX
+      q9HrPVo4tqmzubJB31icXLZJvdXFMnps54r0us1ntgsGAnS7vcf3jW7RazfA2+mP5duzu/U8
+      i12tXkfCxDQff0TW6q2dfrlnV9xaYWvzyQJ4sL3VW9doOw66aT2TXW5lgUarRvMJk/527QDX
+      cakXSt/rl9dGAKFIjGhAomM6GN0u7Z6J3jXptQuowehT27mWgSCIKIEQymPGkx9qJ0aIxwNY
+      1qN3mKwGGBxMs7VaQAsKSLiYjofgObQ7jxbOo+zW19eQnjDu7boWniDS7Xn02gVSAwNsrRaI
+      pR4/wvagHbZOvmbwpGF2VYaO6WDdsxPVEJLo0u0az9RecnAERfAwnzAj4EE7ORQnGAoje4+X
+      3K5dt4Pe7eCJwvf6xY8BfPY1r80VwMfnx8AXgM++xhfAa4DnmHxz4TxzS2tPLmx1KdW79//h
+      q3/4B+ZXtvYUKZVLe/7f2NrE7tb4/KuvaXbN3WXl0t5yD3LrygVK9TYAtewm7Qdu5bvVAnfn
+      FunaBpvLq1RbOzHQ1sbmQ+trlgo8Oq7V2dp4tD+eYzD/NP3zAH4M8BqwdOkc4TdPs3zhM1qW
+      xGBMomJ5mKU6qhrFEpoI4WFwTP789AF++/U8vV6HX/7mN9y+cp5TB4e4eCuHIzjYtsXIQIpK
+      IcfY+CSfX5rljZkR3pmMc7vbT/Hm7+maCnasj2PDaTzBw+2WWN6oIMYyTPVpNBsOB999n7Wb
+      l9F7ZZpNHcVRGXnrKNeu3OatI5NIkky306FPtli2XPTNElLfCG61ghCTET2NX74zzZXbOZp6
+      k8GRGRK9AsFjH7Bw7reInk1HjCDZMp/86UdoYp3/+H//LZFEBkm1ifaN0xdR2Vqdx0EiM/EG
+      RrPI+++//0x9618BXgOGZia4feEcSnyAiZF+Oj2bZCTE5MFDBBUZo9XEAaLRGCAgijKHDkzh
+      ejv5l4LpCQqFDWSzjaJoCKKILCvki2UmRgeIxWKIapj1u9cZmz6IGAgznIohCgKi1UCNDoMS
+      JBGPcfLUh2wXtxmMKujtCsnBSUBhYKSfWrnK+HA/di2Llp5AkyXkSJJTp07Rl4wS0FRazSap
+      gVHGB/sIpEYplnO89cY0lVKeQCTM/J07SLJMpH8KwbLw6LK1ugzIvHnqJAFRQJJVPLPFdrHG
+      4Og0x48fplLKIwjPfjj7V4DXHKPT4PbSFm+dPPbIs5mttyk0DAKSRzqT+UHtuWaX7UqHsaG+
+      R5ZZX19nYmIC12xTarkMpHfySXUaFZa2ypw8dviZ2jRNE1V9MA3zXjzHIF9uMzSQfqa6fQH4
+      7Gv8WyCffY0vAJ99jS8An32NLwCffY0vAJ99jS8An32NLwCffY0vAJ99zd5XH9pZzsxmGRid
+      YiiuEQ6HAFi/dY0b5S4/OzJDXyaFg4zb2ebKjRLH3jtJQLDQFBnTBc82CYTCiH7SW5/XgL1P
+      givz/Jv/7T/y7//FO8yu1BkfSRLWNBKGwWowQcjpUt/IInstjHASY7tEe3AKzWoynFCpGzJO
+      aYmP/tm/49CYn/TW59VnrwC6Ze5kG7TLVTq2h9pZJ3HsH5PqlYkfnGZ7ZQXJAc/usrK+Tiqe
+      xor1kw5CdnGWy2s1fnlijPTY20yO+gLwefV57FwgXdef+qN2ptHDFWQCqvLcnPPx+bGRPv30
+      0093/2tn+b/+098TiWZQJY9gMEgjt0DJiqB0cvzuy0sMjo5h2xYiDqbtYZoGkizR6xmosoBp
+      GayubGCYOpIAgqSg97pIiornOngIWJaFKEr08mvU1QRn/tv/x2a9y2AqBpKMgEdte4GmkACz
+      g6JpfP77v2ZutUA4oCCLAstXbyEPDaCJIq7jIHgOlgs4Nq6ws6zT6aDIMq7XpVZzkGUXUZSw
+      LJtms4GiepTLXcIhDQ8B17XZ2t4iEo3SabdQVQ08F9OykASBarVKpVQkFIlhWyayLFMqlQgE
+      NARBwHU98Fw8BEzTRJJEXNelVq0RDIZot1sIgoAoSriugwB4noNlueC5CIKI49jg2tieiOc6
+      iKJIq9VCFAQEUURgZ7ZlJBTCE0UquQ0cOYIqC7i2hSuIeK4L92IwQYC19XVikRC2J1KtlNE0
+      bTfrnOs6CIKI5znsuL9j63ned7bBu5ddWWRjdY1IPI5lmohGi6qjUNxaI5bYyQp4/3y6Yyvh
+      eR6O49Bo1FFUFVEUcRwHz9tpx3EcBMHDslwkSbyXJZDdv5sbW8ieiyPLyKKE5znYtkO320VR
+      ZDx26qhUKoTDYWzbRhQEHNfDsnZ8uF+X5wl4rku700EQQBClB4Jgo0Wx3uPsH35HLORS6qjM
+      JFu0B39JX2uNj/7xP+Ls3/81zY4OnS6aZNBQItRvZ2EwzuhIgmAozMZGmQNTaRqVCprZYb0j
+      cuD93zCllqm224h2AENvMhBRCCUmKW5vILph/nZ7Ec3VCUTHWZ27ztRHv+L2V1/w/q//Jbli
+      gZ7dBsGgtDyLaCVob27xP/3mNDeWdRShiyrLNBp1QpJFtq1yZGaI9eV5wkmVTmeAzdVVZL2N
+      GY5SchJ8dLSP0uYmm9syb751iMU7i3Ryd8nqMiNKi7WlFZqGQzQW5tjBabK5Aka3TbuZp9UN
+      MDg+iugY3L11A12v0GSK/kgPt1OmK/Xjmm3imT48vUs8labRyJPdbNFslXjjxDuszd8mkoij
+      BUJYnTq9TpeWHGcgJKCGNYqr27z9yz+j0WhwN7tJNJ5CEaHR7FKvVwlHkwTcAhtFBy0s4HYa
+      BCIy2Y02w2MpJFFC9lzyjSateh01HCUk6Fy4cQkrMsVQRkWvFxkYP0qvnmO7WieuBdH1LuFI
+      hGhMZTNrkO6PUN1c5ujpX1Ot1+h0C9heGrm9jTd1inapQM+0UGWZza1NJvo0WuII9Y05ho4f
+      I3/7LtGRUSZcl2w2RzjZR6+apd3rUG/J9A+GUZUA4/1xvj5zjehoH2FZQ1UELNNFsQ1ETBZX
+      tym2dQbiMSLpBOtrqyTjUa7fWuToyaP0mTU+/2qOodE4adFj27RoVXWi8RCJgEixrmN1mkwd
+      OkSnWUPyjO/HAIsNlQGhzpnrKxyYHmdmOML5uRLvHx3id59fZHRkhLbpMpSMgdfld//1rxg6
+      +HPCMZmRgQS6I9KsFhkbG6GwtUEq04cYiEAwQ9ipoVsO8WgGs12k3uwycuQE5bUV2t02ertK
+      JDPA+vwi0wcPUjM8jNIWb7zzAc16CaPTRglH6Ja36LZVIiNJjh+aYW1xDTUUwEMkFNTwTJ1a
+      vUt6ZAC318HGQ++6SIJOUFLQ4mHKTZdETEVyFRaX5nj33VOsLs3j2S6ZmaPQa1KpVEhGQzQN
+      j/GRQVZXV4lFY4BDo9agb2QCz9apV4q4uETSUxRWb9FzBRLhCOFYHMM0kbEYGJmi16lgmQq9
+      VhFHjRLWZFzbwBEUzE4NV5AxTI9oREHRguj1CrHhg4h2B8sy8QDXMqk2ukSDClokgeq1IDhI
+      pZhDkz2UYBDR06jml8jMnMRtlchXG6SiQSQtgmJ3KbWaxOMptgtdRjIqyCE8q0tLt9AEG0GN
+      MZAIsrqVI55KY+g6ktMllJqkWV4nEInTrdeIJeO0DJlYcOd7n4pg0esKeCGZTqmCrIYZmRok
+      t7SEo8ZJJuNEZJu1YosABpYr4BgmSiyKKilENZHtzQLhoQGCeHQ7LWxPZiQdoWgI5FaXCAdV
+      tEiCvlSCdrOO63o0W10GxkZIhzSWltZQ4zGCoket2SMci6HJApbepWO6JKMRFFWlUSsjK9oP
+      fx+g1WoRiUZ5XQc9HcvEFWUU6fk8Eul1OqihENJLHgZ+Uvxm6DpqIPAa7TcXXbeRZfGP+j7A
+      o9iz1zuVLYqlIvPreba29764XKtVWFlc+V4F4YDEl599RrXziGRRTo/s5hb17sPXt9vtR7jm
+      0K7laXafpuwOhvH4xEwPKysp6mMP/kq5Aux89O9pCIbDjz34DcN46Ha02+1dn560nd+tC6tL
+      2/h+gqjHHvztNuK9g79SKT+03nKl8sg2H2bzIOVH1Pu9cuWHt3N/+bd9IRIIqM/14IcHRoHc
+      zjb/+//59xx6I0ynHqLaKfP228f5ZnYFqblFMjWGoIWJKAZKQGZ5y+Pf/vMT/L+/v86BsRTz
+      mxWOz4zitgvcXs4jJod4ayrB1p0VKpmDHNQaBAePExAayHKQerXI8Pg0jWoBo2cSSyVp5NbQ
+      5T4mJ4dR9A026n1kUgLjY6OUly4zXwBZlgnGNVRBIiw51NsdJDWJbXVIhlW6YoQDGZk7W1UE
+      WyEYBpCplfNoWoDBkTG2t7MM9mdoN2skEgluzq0xlAwSjyeoNpuMHDhBPbtIq14GOY7pCRwc
+      iTO7XGBytB+7UaDoxTn95kHcTpnzcyUOju28jteoV3EdE4cw3UYRNRDGljyG+4fI5vKMDg+S
+      294iqAg4QZWAMko4oJPb2uLIibepV3OsLm7x9gen2Zi/hSFFiGugagLFqoXdroOk4gREDg3F
+      mN+wULwe4USIXtdCEW1UwaDSk8BWGZnI4Og9BFGjUc0SiaTpWh2iyQE27l7j6Dsfs7k0S2Zg
+      iNvzawykQtiOhytqJEMSJiqNco5T777HzVt3cB2dWLIPt1enU+0iJyKMH32b6tKOr+mQxNJ2
+      nsnBFIVqg75Uiq7u0e22GB9MUGiYaLKEJHqsZ8scnRxkuVBltC+FIGq4dod8pYVo6wyMTSJ6
+      DoLdpFhz6PW6jE9PMzLww17tvM+eU58YHiHdH0Dqerz17kEC0RjFYoPJ4SEOHJhhYGyKmbEh
+      PNcm1dfHu++8gyeHGYx45BsGsVgCyayiJcZBCZNOJnj7+Bv0TxwioaksL67xxuExDL0HosjQ
+      yBiaLBKPJ+kfGCDgtBETGTxXZmQggyAFmJjoY3u7gAgIgsjQ4AD96TRdXUdEwLQ9FElA8Dxi
+      sSjheIpOo4ISGwDTwnHaKALgwdDIGCPDA1SqdcIBleHhYQRRoFZvE4+F6R/op1QsIcgaYXVn
+      dEHVAngIpFNJmh2DSFClVy8SHJjB6zXJFQqghlGtDq1eh3K1gW0adA0TU9exLAtZCzE6MECl
+      1iAcUBEEgVRfP5qioOttDGNnBCga20nxKAgSiaBHvetgex4iIIoinsfOaJEcYKQ/RSQWw0NA
+      VAIMZ5KAS6PZxnM9IrEog6MjiK6H54lUclskBweJpfpJRkOk+/upFAtEojFc1yGRGcC1LOKx
+      MLFojHAsSX8qjodHNBJhZGwcRVGJhgMMDI0QCqh4ngiCwMhwBsdl11fHddFUFcO0UbUQua0c
+      Bw5PMz3Sh+WC67lEkmlCmoKqqXQMk6Cq7froui6qojAwPEpAkZA8HUGJ4CEQz/QxMpCk2Wg9
+      FwG8wHeCHRaX1jl4YJpWq0U0+uh8nt/F1DvotkgsEtyz/FnqeN5UKhXS6Z2zvWVZu99G3l1f
+      LCAHQ/SaNWKZEULaI/LZuxbbW3kyI2M8qsiz0GrU0G3oS3//IeR3fX6xuFQq/397Z9Yk13Hl
+      99/dt9q37kY30ACaAAkuIdkRM2OHw3I4HH7yx5uP4Bc7HHqzHxwOR0iUZkRSJCGCxA703l3V
+      VXWr6u57Xj8U0AIIaoZiSCGZg/9LVdy6N885mZU385zzz8wV/X7vn73zL6Hjax0gjXxOzi/Y
+      2t6lYa9X4VdZxP6ZS11GDAfbdHvrFf7udIzdGWHp/3zLLZcLut03KyCOY2zb/lPZwktHyTT1
+      y/mmYRjAH5fU+y4dsyy7LOv7PvN9kIYebliwvfmHh/SVO0VIKrJu0mm8Xu637aqymFK1LztU
+      6C0oBeS1yuhF2+Vpimqa35sJ+V32FGmKbJp8n377XXX/7TK/S8YPbbM/Bm90gP/+8//Bhx/9
+      BFXRWI3PCOYL6rbFWdbhbzYkFrT5jx8O+PmvDvnpjTZPjl22Rw0WocCWE3Srhb+4QGtv0Go7
+      /OP/+t/87X/+Tyh5QCw7pItTuldusTtq8/jgmGtbG6Cq5FFIrRg4jSYbTsXXhy5Oo01VZKSR
+      x97tO1ycH5GmBe1uD4qQs1nM3t42q5lLWSs47Ra6yPHCDNnS0fm9MyhJEpG3olIN1LqgKEoM
+      2yIJYxrdAUkco0slpmnirmKu37rJxfEB7mKO47QRmsVmxyFIUkxdx1+6mK0eVza6nO4fkNQ6
+      pagYtCwOjif87Qc73H06RVU0tnYGxFGKbaxfKkmwRFIM4lzgexdIisO1rT5ZCaKIWaxCdm/u
+      IbKIMCsZnx5gGg69/oBallFEQbRY0di9Sb2Y0OwPWUQpGtCvPe4FKjv9Pg1D5tmjh8i6yWjQ
+      I6kkpCxAtjtodUpWqViaRC5qhi2Hs9kKRRG0u5uodU6UFogiYeF5dG2HTDWQRE0arhj1R1Sm
+      jiFJxKGHbnfIgjmSYpBkOa3+EFOBo8Pn9Ec7iCykkDR0WSBqlThcopoNGrZOJWSODp9y4/oN
+      kihF73SxFYm6FgSrJZpUs8Thw5vbf/IO8FomWNUN5vMLgijjX73T57/+t5/THr7L3/2bO2R6
+      h+Pf/AJl8zq3t7t89rsHpHGAP3PxKwNLFIynZ3iTU754dETHsvjim+dsdXVSIQiWLm6YohgG
+      YehhazpRklKLijJfMp3lqFLJyWzBbqtipTQ4eD7FlCs0y6Db7rJaLZElmSJ2eX5wThJXjHoa
+      ++OYMI746L1bHD25z9HTx5S9q7Q0CN0xpd5BFAlxWlCXJWHkEWU1e0ObR2OP2F/y6OkzWpbK
+      0fE5iiRoDK5wcfKccO6SGhoIndSf8nD/DDldYDZ7PNw/ZW/D4ZN7X3EyrtjomSRJRJLm7LQE
+      F74MAmbxkoOnx2hVgN7ZJg58dEXgLX0Up4mtafjeglxIJKGHZa4PFZyfnxDlgkbDodPuEHtL
+      olyQJSFty6Sym0gi5cHDAzQyciHR1QUXecHyIiAIFrSabdqdNmUWsPRTZEPF0jSSOKWuS+Jg
+      xdyP0eSaKgqZlxq3d6+w//QRT4/P0aWSNPA4mx5zPJNoqCW6baJWAtSK83mE547RrQZZmmNo
+      EmXqM1kV+Ms5tmVQCYkyL6nLnGC1wI9zdFWiiFLc2ANUbMfCm5xwfvqYTN8kiiJ0OWHppqSL
+      MZ3bP4HYxzS/3yj8ffFP+gDfdbDYy2tCCKQXNISXZy89/OpzCqPPh7d3L9PR65SzDGJNEZDl
+      FyHCukasvTqQZKhrZFmiqmqUV8KSVVUhy9L62VfCiy/PfBJifZrJq3q+eh7U+dkZm9vbrw33
+      L3WXXn5/kSanFkiKQv2Kja9/VkiSwvn5Gdvb25dyXpVX14K6fsVO1vSCWpIYn5+zvb39mh6/
+      17teUyle2PJt2a/pvr7pW3quqRiXbfPCplf1+K72XC1mRHnN9uboNTte2lrX4pK+MHfnDAfD
+      ddlIyBKsq7++rM/X2qyWkF6078umW8ym5LXE5mi41keSEDWXeq51kBGCF/+HH3Ym2PfF6x2g
+      yjk4vWD32lXkH5ghcZdL+t3fO2F/aP7/Fm/x14A31gP8/f/8kitNG9u02LgywrJMjp89oWEP
+      OQ+m2EaDUcdgPJkz2tgi9uaorU0WywU3ttp8ev+Qn/1kDy9Z8eUXK/7Dz24xH59iNxxOL5Zs
+      bO/SaLb56N2bf0Gz3+It1ngjEHByNMbRcu4+uM+DJ0fU6ZLTRcgXv/wtueNgqDnzMMVxDMKT
+      R/zqt99w76snGLrM46N9ZFniF//3//B8HuDoNePxAWfnUx7f+0caDYPDc5df/PrTv4Stb/EW
+      b+AP+gCvzivruv6D87BX55VrKq18OW98+VtVVciKsp4j1jVVXaP8gMOO3+It/tR4uznuXw0E
+      SZJjWX/euPePEUmSYFrWDyL2vd4BknM+vuex0dHoDrrIdUUcRDQHI0TukXkevrzBwClIoxij
+      3UESEi1T4ni6QNVMGqaOO5vQ6AxoOwarMMPWQaBwMXPZGPWpyxzdNHHnKzZ2rpOHc8psiZsP
+      6egxsmaiyBKT8YQrO1sIoSCKGFmtqQqTVJS0LAUUg8nhEySrjaabjLo2WaVycfKctFbZvTJC
+      0k0SzyOIA3Zv3GJ89AyzPUQqQkyrxcIP2Rh2cFchLUtH0jSipU9SpYzaNrFokOUJtiIQislG
+      1+bgzKXVUElyiYah8Pz4mPdHDb72JDYsDaHobA3XgYCjg+cMN65QCsHIyfjV1x7XNlQ0tYek
+      1YRLl63tHVazc5r9TaI0R6kSTN1i7kf0ey3SvEKXKqokY5YXDB2H9rBDkSv4izGm0yZaTSkk
+      61IvReTolkMtCiI/oNsf4M5WbL+ziw6cnx6jmxbIOg3bIE+nnF1oDPs6ceTR6fbx3Bm97XcI
+      5qdodpM8XNKU4EA0ud5RSYsSqSwIU0GvZVGh0O20SEKfICspIw/TabEKEhAJg7bNKjWoqpxh
+      x2YVZli6hKapzOcrhqMRqzCi12qBJHj65DE7V2/QcCyqPOXj33yCo6jc/slPMQ2NcBVimgq6
+      rjHzc/aubf3RHeBb8xBBUQiqYIlst1k8e4C6ucFvfvkP2O02oiqwGx3SLCfKCuaTMVmaEJxO
+      iPKSVRSSpglWo0ldFYwv5kTegiAIOTkd03Is0iTFC2IWp/cpDJ3TwyVBEFJkMXajw3g6p0hD
+      nh0d02y1mIzHpGmC54dMZ4fcf3CMVuYsg4AwDJGMJroE242cX9w9pNttUpUlnU6bpRfgLebM
+      3Bm208AyNFANrvQloqLN/uefYWgJn+9fEEce4/GEJFzirxakGLTsmkcHMxp5wqEX4S9csjih
+      XDzls+cronDJYuXRcGwQFZPxKWMvZUNO+OZ8znw2w2o0mV1MyLMUEMwmYzTbYOmGrLyA+dk+
+      i6ggLWE2nXBl1CcMAh5/8Wu0jsajpzOePXuGu/RpSBK5pjEcNvnk40+Rk9hxbAAACpNJREFU
+      dBU/THHnF2/oFcYRc3dKmnrkhcEnv/4HzCLmJYNmOnfxVh6+t2A+n+OFSxyrRZomZHnB15/8
+      GscsOA0gCBKWF4+IijazyQlRmjCZzBj2+jy7/wBbKzldBgQvmJtn4ykjKyJWN7n/+ZfoWYSv
+      revz6fESLYnYf/HfGE8uiBeHFIbOx7+6z87WBoeP7rKMKiynyWrhMp/PWXgh79y8wc333mNx
+      MSGJF8zdkDAMiAuJKv1+DNpv41th0Iy4VFGqDNW2KbOEi7Mx7Y1N2o5BlpUsFx7dls7+yZSN
+      jSFZXjJoOrwkumqKQhIGSLpFEcy4fzjng70rVJKJEDm9bhd/5aKbNpppQSUTBXN02yEJU1rt
+      BlkSERcCQxLIukFeCC5OnmH3N9kZDDmfL2k7GrJuY2oKlqGwfzJja9TDtu3LtPpiPgXVxNRV
+      ijRGd9oUsU+YC6QiwnL6WLaC7624+/CQv/nw1vqUdj+mP+xSiQpd1ZkufUa9NgCmJnF0ck5r
+      sIWlcqnrZrdJqVpk/ox5UDJoGXhRQdNUqSWZKCvYGXWIS5Uq96lyiIqCbquBEII8WlHKFoWo
+      kfIQEp9zqcftkcPSj2nZOtQKpqMTJQUX0xkfvHebr+5+wfV37mBIOeOpe6nXSygKVJVCkSz5
+      9JN77P30A/a2t4njmCKNKVApYw+t2aNIIrrdLlVVIYqEu59+wp2f/RfGj77k6s13SfwZrc6I
+      SlZQq5QwF7RtjfPzOc22AxJkOfSbBl5aUsUr7PYGliaRiRJRVdQY2Bp4qykPD+d8eOsqKDKW
+      06JKUlZJRrCc8f77H+DOLkA1KRMPxepiGwqKohCHPiUKjuUQeDMkIJcNmoZDu/PHUWve+gBv
+      8S8ar60uSCOfL+99w96t91CliihI6PRaxFnFajbmxq07nJ8ec3Jywu7uLo6loes2bhBDEWHn
+      AQd1jzs7PZK0QBM5ZnvA84dfsX39NlmwwO6N0GVI4whFlfGiCkevmVzMuXr9OookoVDh+jGO
+      qYJioFISZhWbPYfjiY9jyBRZxNRP2bu6jaNLPDmeoqoavY5NUUEeB9itDom3oNkdcrFYMerY
+      FJVCHC6pKkG308VLCgypQNJN3MmYvXffx3MnIGmUNVBm6JZDmYYoRoOaGpEnVAIkzWSrv9bJ
+      VitQMmauge8ecOuDD4lXSxr9PlWWE/gLulLA3WWbn9wckCQZUrUuu2lpXCxDrl7Z5OzkCMe2
+      CQoZS4U4dKmESrs7IEkTmqZMkEv0GjaGY3J+eIjV7BAmGSIN1ks4a4sq8dGtBoYmQVVQlBK1
+      rBB5c9qNDmrTJkty6jLFtFvUUUDdbiGygoZjgSiZzX36/eb6rf5iBPyx4Q0ukCRJLGfntCWB
+      b1v4s4jTsxOGgwG9Xpfp4QNKtYdsqASrJXmWkV4cs7AH7NoSmlHx2VOfYVNhMplw7eoOslQz
+      Hz/El7ZIZ4dchAWxv0KrXKZJF13O0XWDYLUkiCM0VebB4+c0LYO8FFBmPNk/5NpQZX+mocsR
+      UbBi6aeEUcimEXHiVuRpQazB+PAcRVFJvAuyquaLu8/oNAyCwEdRNaIkohaC3929y/ZwxCxJ
+      KKIEx3HodTuMJxOyLKOqSrIsJUrmFEWDMHBRFZXJZIaERJ5G9Bsl+zMNufSYLce0G9dRNUF4
+      /DVp+yr79x+w9+5t4ihioyGR6RYn5yGzyTGGoRIlEYams//wCaPr15hOL0jPvmFpv4NRBaSJ
+      hxA5pycJ0/k5cZKy1TH56tkZV4yEpbXN15/9lps9iwtMrtsSn08CHKWkzBMkZJIwRLVMnj7b
+      ZzAYYEg1556PVJVkSUqShFiazul8jqEqeLNzTp6d0thsc//BMe/evvmDmQF/7XhjCrRu+Arb
+      Njk5OMBqdYnihKalrxebhD7dpsUyqqnSJbKs4vkRvUEfUeQ4TZskLfHDmEG3hW3bnJ8eYTZ6
+      pMGc1nCHPAmhKhCA3eyjUBKsFlRpgOjdpCPFnM9XdBwDSbfRKFn4MbtXBmsfhZzZeIzd30CX
+      ahxDJnrhhGRFQhwX9LstQDC7mGKZBr/9+hn//u8+Is4ErReU4rpImCwTNkc9JCCJA5qdIb47
+      AVknFzWdpgNAsHJRjAbZi3n7S9iGQlyqBO45ktlC5Amt1pp2vJxNMDojBu0GWRQQpSlmo0Uc
+      xARRyMZwzX1X6orT6YLrN3a598UnvHPrDorVRhEZVbVeSppEOasoZGs0QJVrDs9m3N7b5fRw
+      nyirsJttek2TqqqpVB3jRXhDURTOTw6xml2SNKPftqklHVWp8aLs0j5NUciLjGWQ0DR0Gt0W
+      pwdHdEabtA1YFRod+8e359NbH+At/kXjjXTsN19/vWZp1uvNkPK8JAgCRFVxfHJKXQuyvKCu
+      1xniLMuo6xohBFUaEOU1RfH73/Mso6amLCsW7hzfD6iFoCgKRFUhRE0QBNT1+lotMlzXpxYC
+      UVVUleDxg3s8ffKE47OLdSa5EpefL+XnRQH1Wk6Z51R1TVmWLBcuRewRFzVZlr+QXV4+UxQF
+      QRCwWLh4vn9Zxlo3geu6BEFAnmeXm0XVcGlznUdMJi5JWXK4/5y65lKnuq5x3TlC1FRlQZ4X
+      VN+qs5cLd4SoqISgqqp1FOaFLPGinOlsdnmPENUbcoIgQIiK4+OTy+vrdhBUr8h5i9fx+ggg
+      Un7zy49pblynzHOEqmBrMg3HwV8tKCUVQ5ERkoShKaQXY+JmE89NeO+daxipx1crQa8qMAdt
+      TCnFvYhBqqitNo6cYzU7rOYzFN1ClkqEUOj12qxmFxSKzkd3rvHoyRLfPWLzyiYHpy7thoxl
+      NtAth6pI2Ni6ymx8yqCtcOqZrI4f02x3KdsOcpSiKjWOAQdnGds7ba63TL6Y5wwVWKUhtuGw
+      rQnuLQJkzWRvc0Dgr9CtJlUWE0QpDUNiGZU4jkW30yZYLVDqFW7RpNe+gSpOORkH7A5q5uGQ
+      a3eucHz/dwRBwN6NHeZFm42mhO8teef2+3zz1V3yskLPAuwbtzh4+IQ7OyPmdc3VnfeZnT5G
+      VAkLV7A5MvHSFKnQKeOA997d4wRoxgFnixCRBfy7f/uv+fLuITI5Zm9I29II/BVlMCVWRoTB
+      gmazTdtRsKhZFhU7ex8xcP581OL/H/FaB0i8JTS7xEsX3/dxrPWqpV6nxXI+Ab2Jo0n4aUFL
+      rdDbAybjC5xWi+2NIcQ++37BQAWh1uS1TuxOsBpt/DjF0SU0q4lUrzntk7Mjktrg9s2rFHkO
+      EvT7PQ4OT2g1GogqZ+FF9PsddG29mipLIiTNQipTKlnGd5eoukOvaTINVxwfTXn3xjaGZbFy
+      l+jtFl1NwasgCmP6nSbUYFPjv0ie27pGHPpImkUZLXl8NOXdG1vkQoO6pN/vsVpM0XUVtdGD
+      XKWIpkiahNXqUMSCVJawKEkjjzCpaHZaRFFCw1TpDreIfI8aoIxxvXVO4vqoydOjCddu3ODw
+      4T38omLv2i3S2CUX0Gr01xuIhSXda1cg9AnSgm67yaDfZf/pPsPtbeZTl36vzWo5p6olqrxE
+      c1qXG29R13hRSqc/YNj9cUZzfij+oj7An3oTqarIyQVYxj99qvifu4wfgjSOUE0b9ccabvkr
+      xf8DZkLonUnv0FwAAAAASUVORK5CYII=
+    </thumbnail>
+    <thumbnail height='192' name='Delivery Delay Impact by Port Congestion Level' width='192'>
+      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
+      QZZWIoQjITp37cbnyl2LXbQTYYpio7jmbRTUd9f1KIoN9QM1XVGUopqkcvkqaXL4UOzN2NXc
+      t18fCkAikcjpVVvhcBjDMIpyuj0Wi5FIJIqqMr7nN09PFo8PBcDtdue8qSvWtUC57QLdevnq
+      AuVb4Y6RhMgDCYCwNAmAsDQJgLC07QmAYWDoGYLBDXTA0BJcvtRHMFrIa1GE2LYA6MyMD9B/
+      eQoNGO0foHFnD9MDfaQKe+2ZsLjtmQizqXR095JMTgCQUR2Uu11Uuw02MlClZDAM49pqv1vN
+      MAz0tYnf6lhbeQuKw73NJdo+RiKEHlm+6eMU1Ymtsi0HJdo+RiqKHlq8+QMVG6q/62N/lZOZ
+      YE3LoBsGsTRUqmC3bf2ZgpkkMjRiTzz8Wx3q/dJTqA37trlA2ycz+QqJl/7ppo9TKtoo+bMf
+      5aBE20dbuED8zNdv/kCHl9K/Ovexv9qWABh6htmpMVY31rHNLNJSV8ml/ks4yuoplWG2KGDb
+      EgDFZqdtx17adrz/s4p6HcWWv8VoQvw2crYYzmaTj35R+KSWCkuTAAhLkwAIS5MACEuTAAhL
+      kwAIS5MACEuTAAhLkwAIS5MACEuTAAhLkwAIS5MACEuTAAhLkwAIS5MACEuTAAhLkwAIS5MA
+      CEuTAAhLkwAIS5MACEuTAAhLkwAIS5MACEuTAAhLkwAIS5MACEvLSQC0ZJiRwUGW12PIBjGi
+      kOUkAJcu9tO8cyfzly+RyMUfEGKb5OT26LXVpfSdewvc1TiBTKawtkgS4j05aQGW1iIcOXov
+      9WqYjTTY7XYcDkfhbJEkxLtyEoCWuir6+/qIuKooz9kWHEL87nJSPevae6ht1UGxocgeSaKA
+      5ezzWZEtksRtQGqpsLSsLYChp5mfGmNsco60puGuaGDv3t3UlHvyUT4hciprCzB+4U2G5tbp
+      2L2PI0fupK5U4dwbr3N1M56P8gmRU1lbgI5997CTOCOzMRbnzjMZ83Py5KeRHYBFMcjaAjic
+      TvS1KfoWArwzskRJcIxA2o7DLuf0xe3P1CDYVrODkoWL7D72EBWtPdS6c10sIfLD1GlQJRli
+      Purhk+01eHbUYZPejygSJk+D2jE2xvmv//4uz/zgVWT4K4qFuYkwXx3f+Id/zHFRhMg/cwGI
+      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
+      A8Pcn58h5i8uAAAAAElFTkSuQmCC
+    </thumbnail>
+    <thumbnail height='192' name='Delivery Delay Impact by Route Risk' width='192'>
+      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
+      9fLpGAuRNOlskv4duwh67Wuxa3YgTFFcqFX+Tb82Curbb0hRXNcNiimKUlODVL5QM729IRS1
+      F7dqf/t1XQDy+bytZ22lUiksy6rJ4fZsNks+n6+pjfEdHzw8WTuuC4Df77e9qavVuUD27gJt
+      vErtAlVa9faRhKgACYBwNAmAcDQJgHC09QmAZWEaGtHoCiZg6TnOjZ4ilrZn9E6I9bJOATC5
+      Mj3GufEZDGDy7Dl6duxi5txpitU990w43PoMhLlUtu4YIp+/CICuemjw+2jzW8R1aFF0LMt6
+      d7bfRrMsC3N56iOt62rajOIJrHNF68fKJzBT4bWvqHpQW7atf0HryCpmMBPza19RcaG2bf/Q
+      X9kyEmzoOoZlkdWgWQW3a/VlqmaQyDLIfu9LH2nV4Fd+gNq1d50LWj/69CvkX/rmmtdTmrZQ
+      98yLNlS0foyrJ8n99Nm1r+gJUv/Xb37or9YlAJapc+XSFNFEHNfsNfq6Wjh75jSexi7qpZst
+      qti6BEBxudkyMMSWgfcea+o0USo4GU2Ij8K2yXDvzFYUoprJViocTQIgHE0CIBxNAiAcTQIg
+      HE0CIBxNAiAcTQIgHE0CIBxNAiAcTQIgHE0CIBxNAiAcTQIgHE0CIBxNAiAcTQIgHE0CIBxN
+      AiAcTQIgHE0CIBxNAiAcTQIgHE0CIBxNAiAcTQIgHE0CIBxNAiAczZaL416dHiOS1jHws29k
+      kCq5K4AQH2BLCxBPZenq6kLJZ9AA0zQxTRPLkvsliepiSwvg96rElpdR3B5Mc/WWRO/8E6Ka
+      2NICpNMZfMEQFLNo5uqtkdxut9wzQFQdW1qA3Xv3E09laNuzl0bbbsEhxB/Ols3T4w/S7g/a
+      8dRCrCvZJxGOVlYLYFkGqUSCgmYSrG8k5PfYXZcQFVEyACsL0xw99jsKrhAtIZWF5SRd23bz
+      wN0jBDzSgIhbW8kAZHM6Dzz8OE1BH6aWIaO5SC8tkMkVCFTxHdOFKEfJAPRsG8SMTfGL35oU
+      Lv6apNHKF5/5Gi1ydEfUgLL2YRRVZebUr0gGh7ityYtu2l2WEJVR1ve44mlg5K5P8uA9e8hm
+      MjR47S5LiMoob0dGdTF29EUMl05XYws7GuqR40CiFpS5J+/lvs98Gk3XyBeKyIweUSvKC4Cl
+      k0qujgP4NJ8EQNSM8g7ke0IMDe9lZO8QizMXKEonWNSI8lqAfJwjr7xMOlsgHM5SNJBJFKIm
+      lLUZW/4GmnwW2VyB4fsO0CRjAKJGlBUALXyOOd9u/urZP0e9cobFot1lCVEZZX2Xe9p30LTy
+      PN/5zgkCbQO0yjiAqBElA2DqRZZXMtz78c+QzRUJ1TfjVipRmhD2Kx2AfJK3Xj/G9Nk3yLbd
+      wc6+zRx87EFkGpyoBSUDoIZaOPjo44y7l4ju/CIPbPXYcxqZEBug5LasJxf5n+d/yvzcHNr5
+      bzOzqZ+n/vhRQpWoTgiblQxAsgBPfP0b+D3vXN7KIhVbIuFvoDHos7k8IexVMgBaMszPDv+G
+      xrY2/B4X6fgKmreFT3ziQCXqE8JWJQOwaWAfj/cMEFmOkS8Y1A2N0N7ajOqSQ0Hi1ldWf9br
+      r6Ozw0NRN1AUFUU2flEjygqAtnSOf/qPlxjY0kGwoY9HDn1cDoOKmlDeSHCwga6uzdy+bxce
+      b70cBhU1o8zp0M3s293J3JV54smMnA8gakZ5s0ExuDh+nkjkGlOX5jDlfABRI8rsA0xT7L6b
+      Pz04zK++931iGnTLEEDZZsIJLlxbWfN6TSEfdw922VDR+nlt/CqZvLbm9Xb1tdLXXm9DRWtT
+      Xh+ge4SB0f/lueeOsW3/x9lUYjaoZerMTpyjWNfD4Ob29ajzljZ6KcIPjkyseb2dvS1VH4Dn
+      X51ifjm95vW+8bm9t0YAtGyCaDJDY+8uHugy8fiC6ArcLAOXxk7h7x2mJyTdZVHdSs8GNTQK
+      mSTXlqIEvG60aIGBoQG8NxkKWI5GUArnWXD7GRnZjWLoWJaFYRg3XOfo2TlOTUfW/Aa29zTz
+      6F3b1ryeEFBGAHz1zQRmTnNhReHRO3t486VjJLX7Cd6kCfDXdzB4++0sj59iRYMO7+rLqOqN
+      b5d3KZzgtfFra34DhmlJAMRHVsY+isblmSuEZwuc8abYtO8e2kpcFWtgaxfjZ86iqHXskSto
+      iSpWRgD83PXY0ygtx1iI59AyWXTl5iuGWnvZ19INuFBk1oSoYmX1Uo3lSU5GirTqCqoWXr04
+      bokRBEWR66aI6lfWVqrWNdHd2ouSn2FmPkL+xn1ZIW4pJVuAQnKJhahGA0tk2zaztaeLetmv
+      FzWiZABcHi/BYIj2jk50owO3t0EuCidqRslt2RNopKNO4dToKNOzCwSaGmU2qKgZ5X2Zhzr4
+      8pcO0aZEeO6fv0Ukb3NVQlRIeV/mqWv85/d+Qteu+/mHf3yCOpkIJ2pEWS2AYZmo7iCzsxO8
+      +sILxOUokKgR5QUgl4DGHvxanFgyh5wOIGpFWQHwtA2wqz6JqbZwx8GDtEovWNSI0gEwsvzk
+      v7/LhbiLBneKt0YvyCmRomaUDEBhaYblxiG+9tQXeerpr6FemSReicqEqICSOzOW4mZx7CjP
+      XT4FmCQT/gqUJURllAyAv3OQb37z7ytRixAVV2Z31mJpbpqoHqA55KWjox2Z5SxqQXlXhVie
+      5BfHpnB7CnRbsPfxJ+mQCXGiBpQVAEV1k03GSMaukG68jXtufGajELeUsgLgburnmS/XM7uw
+      QteWLdTJdFBRI8o7IyxxmX/7zg/x+P2Emrbxla8/JneIETWhvE6wy6ClZ5iP3TuI2xNC5sKJ
+      WlHetUHzeZYSyywuRliKxmUukKgZZbUAqt9HMb5CeDFMIKRIAETNKBkAo5gjazbx+UceRNNN
+      PL4mOSVS1IySASimo8xeizF35TL5ooG/rpsdewYqUZsQtisZAEXLMLmk88QXHq9EPUJUVOnJ
+      cHqBE0deIHHpFADBxi0ceuLTBG0vTQj7lW4BVA977v8sT35y/zuPyFUhRM0ofXXo9gEOPWTi
+      8cjkH1F7Sh7QUVQPIT3OC78+QmIN10Q08kmuLSX+oOKEsFt5ezOhdu4fjvPj736LSNHDJw5+
+      njt3beaG98u2DM6NjpFwueluv2v9qhVinZV3SD8f5fArv8Vs2MTBRx4ld/k4C6kbtwZLsxPU
+      bd6J/+2A6LqOpmk3vUOMEBuhvBagkCLXsJ1nvnAAl6LA4NabLczUhSsU3YvMLy4xMLSPlmDp
+      O8QIsRHKC4C3jsUTv+T7xgo9rd0ceGj/TSbE+Tjw2c9hGjrTMzPvbvxCVKMyA9DI0994Ft0w
+      UT3BslZyqW62D2z/w6oTwmZlBcDSkhz+1YvEvS0MNvhpPPQF6mVCkKgBZW3GxegVlL79dAU1
+      8okEWenLihpRVgB8Hdtpio+xHCvSuv8AnTImJmpEeTsylkWopZU6v5tsLEpOWgBRI8oLgMtD
+      Y30dqlJkavICRTkjRtSI8o4C6QXcjb0cPHQXzQ2hG48AC3GLKRmATGSasZlFRk8c53Bep665
+      n6efOURdJaoTwmalp0P76vGoK9xx9/0AeHxNeG0vS4jKKH1CjKGTy2bR3/7ZawVsLkmIyinZ
+      CQ61dHPfvfvIR68xG8tjZGKYcocMUSPKGwhbnCAc3EmrN0v26mVimt1lCVEZZQXA27WbztQZ
+      Rk+dJ7VppwyEiZpROgCWyfgbRzh7KYzHH6Svr1cOg4qaUbITrMdnOHJB42/+9u9w6wm+/e8/
+      YveOP5OL44qaUDIAWi5LIr7A0cMvg6WTWsmQAwmAqAmlrwrR1s+TD7so6KuHfjZ/dYhG28sS
+      ojJKBsDlDbJ951AlahGi4uS0FuFoEgDhaBIA4WgSAOFoEgDhaBIA4WgSAOFoEgDhaBIA4WgS
+      AOFoEgDhaBIA4Wi2XLt8YXaKSDKHYfnZMzKInEAmqpUtLUBHXz97du/EXcygAZZlYZomliVn
+      04vqYksLYBXTnB6bpHPbboKA8fbGLwEQ1caWFuDM8dcxffXkEzGK5uqtkdxuNy6XdDlEdbGl
+      BRgYvoNM3kBxeaSXLaqaLQFoaO6gwY4nFmKdyRe0cDQJgHA0CYBwNAmAcDQJgHA0CYBwNAmA
+      cDQJgHA0CYBwNAmAcDQJgHA0CYBwNAmAcDQJgHA0CYBwNAmAcDQJgHA0CYBwNAmAcDQJgHC0
+      /wfrOKuhxAigrAAAAABJRU5ErkJggg==
+    </thumbnail>
+    <thumbnail height='192' name='Delivery Delay Impact by Traffic Congestion' width='192'>
+      iVBORw0KGgoAAAANSUhEUgAAAMAAAADACAYAAABS3GwHAAAACXBIWXMAAA7DAAAOwwHHb6hk
+      AAASxklEQVR4nO3daXAb533H8e9icREgCBK8QVE8REokdUSyHOV2nDiOnUxz+IjjI5NOmh5J
+      2neZ6Uxf9F37stOZdjrpdJJMj4zHjpLWI8VyLLWK5duWrYOiSIqkeN8iCJIAce7RF0xky7GF
+      pQNAEPb/eUWCWOIPcH/c53n22WcV0zRNhLAhRVEUx60uQohbSQIgbK2oAUilUkiLS5SSogZg
+      bW2tmC8nRE7SBBK2JgEokM3oHL85+b+cuzxGKmvc8LP+C2fZSGbf9YhBKpnCMCEy0c/4Svqm
+      v3tq6CyvvnWJjWSG1ZlBxpbi7/wwNscrl6bf9ewM4yMTvKeEmxS+zKsXr2L16bc7CUCBrM4M
+      cXUhSeTS8/zytausL09z/nw/K7E0o8MDxNNprg5c5PylYTbiS/z0H3/EpckFHG4fFc4s11bW
+      0dJxImtxlqdHOXdhgM3MVv9p4O2XuTYzwE+PvoTqrsDvVpkbH+bCwBWSawucH1tkY2WJzYwB
+      JHjt9OukdDANjfGhiwwMTxLfiLIeT5OOrRCNp7g6dJHLI1NoiQgXrsxil56a81YXUM7SqQSb
+      ikJtwMP//OIoXb29HDu9ShDAzDA7NcXQlX5WPvd10ukU8c0kM5dPEul+mKuvnuau/XVMbboZ
+      GZzkUKfCsVUPj32+G9PUiW9mqK2tYnHwDBNVdzF65hjdhz5Du18lOj/MMyemeejxh26oJz71
+      Br86G6WFN1hqbWcpHSK81o9nVzvnR5LUZl/HuOPQLfmsbhU5AhSQx2kwupCmr62W9Y0Y3mAD
+      ve1hADLzw4wk/XR3hMHlpzkcpqe7A1UBp7eatoo4L15aoGtnLRtpDW/9HnqaKwBQHCojY4v0
+      9rSjAGpFNV++/17WJweYWI6xuTLLhlKJW1UAMA2dTCZNKhYlbTho7d5PV+9ezMV+hmJeWh0x
+      0oZK++4D1HjttUvY690WkT+0g4995nN879tf4vLlcb742U8wOHiFrKnSsWs3wfowntgsMUeI
+      lpoQvT01nDz1Iv6WPpoqnXzk8F7c1e20tu3m7r4aBgfHUDweANr2HOZ73/8Wy6ND+Jq6afab
+      jI8Ok3bX0Njcyhe/+hj37/UxubwJuKmr1nnm6SfZqP8Euz3XGJtdxukJsX9XiLZ9H6Wp7y46
+      1CXG51dwVtbR19mMcms/vqJRijkVYnFxkcbGRhTFLh/vu5jmVrtaUa7vXKZpXv/++p/hPd9v
+      fVYmW0/94M/txuffrIx3nvdBX9uFoiiK9AHyxDAMFEX54B3oXTv+Ow8p7/v173+vkGu/tLrj
+      ftBr3mx7XddRVdXS77/dSBMoT6LRKNlsNvcTb0PXrl271SUUjARA2FrZBCCRSNzqEvIicu0a
+      umkCBmurEdJZ/fefpKfBSBGPp27j8XqTVCKJAWipBClNJx6Pv+c5Guvr730sv8omAOMTE9e/
+      1jIpYptJTNNA101Mw0A3DAzDwCjxyXijZ08zuaZhpOK88trLXIumMLJp1uNJAEzTIJNcxdDi
+      ZLMapq5jAoauYxgGupYmvplCSydIpLVb+2ZuSmdmfAoN2JgZY3Yjfb0JqWvZrfdmppmeWiAW
+      i2MU6M9WNp1gw9g6ea8l1rgwOE6112CuegeJpSgt3jijaiMt6gahll6CvtLt0FW2tBObHice
+      duMP1GLqm5y/ME9jrcLcUjOpyFVqQpW0NPsYG4kSIkr1x44Q7X+LyoYmhuciVMZXMFvaMdaT
+      HD7ykZL9IyfWlxkc0EjMThOq2cXIxBh7OxsZnNzApSdp6e1keWYCr1cn6wzQ19mS9xrK5gjw
+      O4n4JsGGMLv6OthcTqOYMVYcfmqza6wnVHwVpbvzA6BU4CXBzNImjc1B2IywpjnQHQHUbAJv
+      dR0drc243U503cDQdUxMdEPDNBXCbZ201jXRtmcXNV4npXwM8Abq6Nu3jz0dLTiUrdGmzOY6
+      jZ29NNYGUTBpaN1FW3gHKjefH/VhlU0AlOQqZ868TCTjILW6wOX+Cerb6mkJuEm4qqn1auj+
+      WlwlPszt9XrZ2VzJml5JtdeLq7qZOmeKtegaFTVVZDdWuDR8lURawefzUF3vY3xgiKX1LE6X
+      C4/TgdPrRUXB4/WU8B9YweP1bp3J9lTgUR34fD58oWaWh95kdPYapunA63WjOBx43O7CVFGO
+      J8JMw8AwwaE6inZGMxKJEAgEcBfkD2Wi6yaq6sA0DQwDVHVr1zZNE8MwcKhqwd7r4uIiTU1N
+      BfrtN0rFV1la2WQ9tsau3X34PYU7YpftiTDF4aDEGzrbpKD+dl6Pojh49zkpRVHK6iSVx19D
+      k7OC8I4wLmfh39cNAUilUgW9aisWi2GaZlmebk8kEqRSqbLaGX8nFovd6hIK5oYAeL3egh/q
+      ynUuUGGbQLdesZpAxVa6fSQhikACIGxNAiBsTQIgbC1vATANnfW1ja3VBIw0Vy4PsJ4o5fOQ
+      QuQrAIbGxMhFzvWPoQMjly5R09rG6KWLZEt77pmwufycCHM46ezZTyYzBkBGcVJbWUnSo7Om
+      QY2iYZomuv4+U3tvAdM0MeNLH2pbxRdCUUt3qNPMJjBTG9vf0KHi8Nfnv6A8MrU0ZjL6IbZU
+      cAQa3/cnBTkTrOs6hmmSykK1Ck7H1suUzEkiU2fzx1/4UJv6Hn0StflAngvKH23keVIn/3bb
+      2ynVbVR+59kCVJQ/+sybJJ/5/vY3dPkI/NWb7/ujvATANDSmx0dYjkRQJoOE6wJc7O/H4a+n
+      SrrZooTlJQCKw0lb117aut55rDasoxRwgpYQ+VCwyXCOUmnuCHET0kARtiYBELYmARC2JgEQ
+      tiYBELYmARC2JgEQtiYBELYmARC2JgEQtiYBELYmARC2JgEQtiYBELYmARC2JgEQtiYBELYm
+      ARC2JgEQtiYBELYmARC2JgEQtiYBELYmARC2JgEQtiYBELYmARC2JgEQtlaQxXEjc+PMRuKo
+      3mr6du+UlImSVZB9c2puid29fWiRBdKFeAEh8qQgR4D6Gh/n3ngN1VuLaoKml9YtkoT4nYIc
+      AZZXY/Ts3U+QGHENnE4nLperdG6RJMRvFSQAfT09RCMrBHZ2E3IV4hWEyI+CNIEqgnV0BesK
+      8auFyCsZoBG2ZukIYJo33u1aUeTWd6I85AxAZnOVl06fYmIpgd+jsJFROfypuzm0eweqQ4Ig
+      bm85AzA1OkLHR7/I3Q1B0LNkNJ2R/ossrYcI1/iLUaMQBZMzAN0HP44Zm+b0WxGyE6eZT9fz
+      jSceICAjmqIMWOsDZBJcufwWLlcTXRUJ4hoSAFEWLAXA4aunp72DA4cPkdlYo9FT6LKEKA5r
+      w6BOlenhy8TSWYKhmgKXJETxWAtANkugNsArzx/n16fekAluomxYC4BpYhgGuq6xth7DzL2F
+      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
+      rkqIIrFwQYyBsTHLvx/9NW17P87f/f03qPAUozQhCi/nESARmeT82AJODEbOvcjTPz9JohiV
+      CVEEOY8A3uowXc4adu3aDYDD4ZI7RIqykTMA68sTPHfy9etrAVVU7eSrD90jF8SIspAzAKGW
+      Xp74Tg8Tl15nOh2kJeSTi+JF2bA0op9ZuMhvRrNUu67ARAZfSzth6QiLMmBpGNQZqCO7NMzA
+      ufNcXnNQI4vjijJh4QhgEk8YdLTU4K1p5P4v30eFXB0pykTOI4CRvMbTvzhBcGcfBzoqOfrz
+      Z5EbxYtykTMAmegS6epW2pvrCO/cgz8WYaMYlQlRBLkXxvLX0cB5Tp06BYCneaeMAomykTMA
+      rmAzjzz+7WLUIkTRyVL/wtYkAMLWJADC1iQAwtYkAMLWJADC1iQAwtYkAMLWJADC1iQAwtYk
+      AMLWChIA0zTRNQ3DkCW0RGkryCKHi5OjRBIZMhkH+w71IReQiVJVkCNAY1sXvd0dKNk0OmAY
+      BoZhYJpyRBClpSBHAC0RpX94kp17+qgAdNnxRYkqyBHg4tnXSJsKy3MzpPStWyOpqiq3WhUl
+      pyBHgH1HPks6q6M4VFwyziRKWEECUOEPyPKJ4rYg/5+FrUkAhK1JAIStSQCErUkAhK1JAISt
+      SQCErUkAhK1JAIStSQCErUkAhK1JAIStSQCErUkAhK1JAIStSQCErUkAhK1JAIStSQCErUkA
+      hK39P/HxlNIRtTMuAAAAAElFTkSuQmCC
+    </thumbnail>
+    <thumbnail height='192' name='Delivery Delay Impact by Weather Severity' width='192'>
+      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
+      KiGKxMIFMQbGxhz/efg3tO/5FH/399+i0l2M0oQovLwtQDIyxbnxRZwYjJ59iad/fpxkMSoT
+      ogjytgCemhDdzlp27NgJgMPhkjtEirKRNwDrK5M8d/z1q2sBVVZv5+sP3i0XxIiykDcAwdZe
+      Hv/ubiYvvs5MJkBr0CsXxYuyYWlGP7t4gRfGctS4LsFkFm9rByEZCIsyYGka1OmvJ7c8wsDZ
+      cwyuOaiVxXFFmbDQApjEkwadrbV4apu476v3UilXR4oykbcFMFJXePoXxwhs72NfZxWHf/4s
+      cqN4US7yBiAbXSZT00ZHSz2h7bvwxSJsFKMyIYog/8JYvnoaOceJEycAcLdsl1kgUTbyBsAV
+      aOHhx54oRi1CFJ0s9S9sTQIgbE0CIGxNAiBsTQIgbE0CIGxNAiBsTQIgbE0CIGxNAiBsTQIg
+      bK0gATBNE13TMAxZQkuUtoIscrg0NUYkmSWbdbD3QB9yAZkoVQVpAZrau+nt6UTJZdABwzAw
+      DAPTlBZBlJaCtABaMkr/yBTbd/VRCeiy44sSVZAW4MJbr5ExFVbmZ0nrm7dGUlVVbrUqSk5B
+      WoC9h75AJqejOFRcMs8kSlhBAlDp88vyieKWIP+fha1JAIStSQCErUkAhK1JAIStSQCErUkA
+      hK1JAIStSQCErUkAhK1JAIStSQCErUkAhK1JAIStSQCErUkAhK1JAIStSQCErUkAhK1JAISt
+      /T8PDJUX+A4oIgAAAABJRU5ErkJggg==
+    </thumbnail>
+    <thumbnail height='159' name='Typical Delay Impact by Driver ' width='192'>
+      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
+      AkUjBCBQNP8PEcnLmYPCRWsAAAAASUVORK5CYII=
+    </thumbnail>
+    <thumbnail height='159' name='Worst-Case Delay Impact by Driver' width='192'>
+      iVBORw0KGgoAAAANSUhEUgAAAMAAAACfCAYAAACvBNYlAAAACXBIWXMAAA7DAAAOwwHHb6hk
+      AAAYD0lEQVR4nO2df1hUdb7HX+sIDg4jiL+Qn4GgA/4IFLU0zSe97WLeKNe79rj60F1325u2
+      devp7t3u03Ov7d7WWr2RdqksSIz0mmUL1SPqWpSWhWGDKIjID0VlBiZgcBgYGY7n/jEDM8AA
+      Qgq45/t6Hv6Y8+NzPudw3uf7PTPf9/fzE1mWZQQChTJiqBMQCIYSIQCBohECECgaIQCBohEC
+      ECgaIQCBohECECgaIQCBohECECgaIQCBohECECgaIQCBohECECgaIQCBohECECgaIQCBohEC
+      ECgaIQCBohECECgaIQCBohECECgaIQCBohECECgaIQCBohECECgaIQCBohECECgaIQCF09zc
+      POB9LRbLTcxkaBACECgaIQCBohECECgaIQCBohECECiaWyyAa5z/Wy6VkvuyKo7u+pjCRvdl
+      RvIOFdLIzaUgPZ2CmxwTJK5e/IqsXbvYtWsXWV9V0GC/6QfphSqOfnzzr5VSucUCGIXm2gm+
+      Oe+2qDKfQlMp3xXbXMsaSzhZ543fjzjSrbnZu2M7ncnrx3xZtHotyWtWsWBcJcdOmQbhyO1o
+      CYkcz6j2jwXppA/Gif+dcsu7QEFRoVRXGjs+m84bCXpgIdeKS2hvGKSyUq5H3NGxjWQzUJKf
+      T4nBRqfGAztWsxmz2YzZ2v7YlbBZzFjtrnUWm/teEra6CgoLK6izdYnWUEFhfiEVnR7hdqzO
+      2JLN4nYcByUnqrhzWRzj1Crw0jAxZikPJkxwO5wNQ0k++SUGOg4n2bB2OTZ2K67QdhoqCskv
+      7NKadGzTfo4AvkwKD8DLLT+71XlNLDYku7XL+TvidFsmAAbjHSA6lrHnSpxNto2yS/7ExsQS
+      SwVVzk3On2tjRqwaAKk6h9S3TnAtMAzvs7vY/H67UEwc3ZXO374vo6ysiG/ee5WMAivQRGlu
+      NnmXLpGXnU12dja5pU3OyBV8uu1/yT5VT2trKe+//D4lzvvAWpDBq9nV+IYFYDm0je3H6p37
+      FLF3bxHWggw2bX2X7JOGTqcTNmUMhcdLuerpfpKqyUl9ixPXAgnzPsuuze3HK2Hvm8c6dVtK
+      PniHby0AVgoyXiW72pewAAuHtm3Hlcpe9hZZKcjYxNZ3s3GkUsTelFxMQFNpLtl5l7iU5zjv
+      7NxSmkZcJPvtL6h3O1bVgW18ckHVj3+agpBvOWY5NyVN1rfJstyml3fu1Mttsixf+WSHfMAg
+      y7JskA+8tl+uaN82NVMuamvft00uykyVc80ewrblyzu25Mrtq/RpabK+yyb6tB1yfpvrs+FA
+      mvOYZ+Xd24/IdR1r6uQj23fLZx17yWkvvCS/m3VebvJ4Pq1yzYl35T/9/nn5f3YdkAtqWl1n
+      mpsqZ7qSl9uKMuXUXLPzPLbLR+o6VsiZ7cc/u1vefsSViVx3RN6++2z7CcgvvPSunHXePRO9
+      nPbCAdngOkk5rcuJX8xKkbMudnySs1Ky5IuyZ6xWaw9r+ubq1asD3ne4MPLWS8wP3bQWjldB
+      3LVimu94ABUQFOVLVkkj+JRQGRBLIgCVlNdeR6XPJ9+5t7mlmstVwEyw157iSG4BtTaAOi42
+      x9ACvbw7qFB5evAZK7l83U5Ffj4VzkUNLReQTKCbAPgtZGVSFBqPMb2YOHcdz8+VsBnOcGjP
+      n8lf8izr4zRUltdyXaUn35U81c7kYxPG8Zm+nqVLA5DOfc+1hFUEAMbKy1y3V5Cf35EJLRck
+      TOhwpLKSpCjPmfRE2KKZZB8oRlobi6oyn0vTFpDUrwjKYRAEAIERAVSUGDHSQkS883aNjmX0
+      t5XY/csh4i7nlipUY4OIiorCp33nqGe5WwPY8nhnp4nlzyQT6gVQQPofDV0PdWOoVIweH0xU
+      VFjHoqioaai1zg++vj3c/J2CoJ58J0m/8+K9177GFHc/KtVYgqKiiHIlz7N3OyPp7iHs8zyM
+      S+/HeMLKjEfUzlRGMz44ClcqUURNU+NKpX83PwABC5ln3UW+bRrar68Qszyw/zEUwuD8DhAd
+      y9hKPfrqseja/xeqCO5oLuZIBcQ6+/8QTYy6lAte/vj7O/+0XiABtQZap8923vyA3U7n19MW
+      WmzcGBN0hJrKaNC6HcdrBNINdJOtDQ2dj2urx+zthxaIjlFTesHLFdNfi1fHa3wY8cHnyCvN
+      J4/5JKjbUwnFVNaA1t+Vi9cIif702Fu6nbiahEUaThz9hoK2eSwM6EcwhTEoLQAqHbG8xR7V
+      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
+      CAEIFM3/AzHn9TQFINkQAAAAAElFTkSuQmCC
+    </thumbnail>
+  </thumbnails>
+</workbook>
